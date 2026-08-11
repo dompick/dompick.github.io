@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties for sale in Mallorca, Madrid, Barcelona · Dompick Real Estate</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#00ade1',
+                            darkblue: '#0090bc',
+                            lightbg: '#e6f6fd',
+                            navy: '#0f172a',
+                            slate: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #ffffff;
+        }
+        .view-page {
+            display: none;
+        }
+        .view-page.active {
+            display: block;
+        }
+        .prose-custom p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #475569;
+        }
+        .prose-custom h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-[#00ade1] selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" onclick="navigateTo('home')" class="flex items-center space-x-1 text-3xl font-sans tracking-tight focus:outline-none">
+                <span class="font-light text-[#00ade1]">dompick</span>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" onclick="navigateTo('home')" class="text-slate-700 hover:text-[#00ade1] font-medium transition-colors duration-200">Home</a>
+                <a href="#ai-suite" onclick="navigateTo('home', 'ai-suite')" class="text-[#00ade1] hover:text-[#0090bc] font-bold transition-colors duration-200 flex items-center gap-1.5 bg-[#e6f6fd] px-3 py-1.5 rounded-full">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI Tools
+                </a>
+                <a href="#blog" onclick="navigateTo('home', 'blog')" class="text-slate-700 hover:text-[#00ade1] font-medium transition-colors duration-200">Guides & Blog</a>
+                <a href="#about" onclick="navigateTo('home', 'about')" class="text-slate-700 hover:text-[#00ade1] font-medium transition-colors duration-200">About us</a>
+                <a href="#contact" onclick="navigateTo('home', 'contact')" class="bg-[#00ade1] hover:bg-[#0090bc] text-white font-semibold px-6 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-200">
+                    CONTACT
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-[#00ade1] hover:bg-slate-50 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-3 pb-6 shadow-lg transition-all">
+            <div class="flex flex-col space-y-4 font-medium">
+                <a href="#home" onclick="navigateTo('home')" class="text-slate-700 hover:text-[#00ade1] px-3 py-2 rounded-lg hover:bg-slate-50">Home</a>
+                <a href="#ai-suite" onclick="navigateTo('home', 'ai-suite')" class="text-[#00ade1] hover:text-[#0090bc] font-bold px-3 py-2 rounded-lg bg-[#e6f6fd] flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI Real Estate Suite
+                </a>
+                <a href="#blog" onclick="navigateTo('home', 'blog')" class="text-slate-700 hover:text-[#00ade1] px-3 py-2 rounded-lg hover:bg-slate-50">Guides & Blog</a>
+                <a href="#about" onclick="navigateTo('home', 'about')" class="text-slate-700 hover:text-[#00ade1] px-3 py-2 rounded-lg hover:bg-slate-50">About us</a>
+                <a href="#contact" onclick="navigateTo('home', 'contact')" class="bg-[#00ade1] text-white text-center font-semibold py-3 rounded-xl shadow-sm hover:bg-[#0090bc]">CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- ================= PAGE 1: HOMEPAGE ================= -->
+        <div id="page-home" class="view-page active">
+            <!-- HERO SECTION WITH BACKGROUND IMAGE -->
+            <section class="relative py-20 sm:py-32 overflow-hidden bg-slate-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80" 
+                         alt="Luxury Mediterranean Villa Mallorca" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/0f172a/ffffff?text=Dompick+Real+Estate'"
+                         class="w-full h-full object-cover object-center opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-900/40"></div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <div class="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-md border border-[#00ade1]/30 text-[#00ade1] font-semibold text-sm mb-6">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>#1 Real Estate Network in Mallorca</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-tight uppercase drop-shadow-md">
+                        PROPERTIES FOR SALE IN MALLORCA, MADRID, BARCELONA
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-2xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed drop-shadow">
+                        The real estate network with largest selection of properties in Mallorca
+                    </p>
+                    <p class="mt-3 text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
+                        Contact us and get access to our services and knowledge in the real estate business
+                    </p>
+                    <div class="mt-8 flex justify-center">
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-flex items-center space-x-3 bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold text-lg px-9 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5">
+                            <span>CONTACT US</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FIND YOUR HOUSE IN MALLORCA & LOCATIONS -->
+            <section class="py-16 bg-white border-t border-slate-100">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-10">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 uppercase tracking-wide">
+                            FIND YOUR HOUSE IN MALLORCA
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                            Are you looking for a house in Mallorca? (also written Majorca, although in Spanish and Mallorquin we write Mallorca) Do you want to enjoy a house by the sea with stunning views to the mallorcan turquoise sea? Or a house with pool to spend your summers? In our large portfolio you will find a lot of properties for sale in Mallorca: houses, townhouses, luxury villas, cozy apartments.
+                        </p>
+                    </div>
+
+                    <!-- Featured Location Visual Banner -->
+                    <div class="relative rounded-3xl overflow-hidden mb-12 shadow-md max-w-5xl mx-auto h-48 sm:h-64 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Mallorca Coastline Turquoise Waters" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/1200x400/e6f6fd/00ade1?text=Mallorca+Properties'"
+                             class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]"></div>
+                        <div class="relative z-10 text-center text-white px-4">
+                            <span class="text-xs uppercase tracking-widest text-[#00ade1] font-bold bg-white/90 px-3 py-1 rounded-full">Explore Destinations</span>
+                            <h3 class="text-2xl sm:text-4xl font-extrabold mt-2 drop-shadow">Prime Locations Across the Island</h3>
+                        </div>
+                    </div>
+
+                    <!-- Locations Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Alcudia</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Algaida</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Arta</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Binissalem</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Bunyola</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Calvia</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Campos</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Capdepera</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Deia</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Felanitx</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Inca</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Llucmajor</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Magaluf</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Soller</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">El Toro</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Fornalutx</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Palma</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Pollensa</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Esporles</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Escorca</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Santa Ponsa</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Port Pollensa</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Port Andratx</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Palmanova</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Palma Old Town</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Paguera</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-slate-50 hover:bg-[#e6f6fd] border border-slate-200 hover:border-[#00ade1] rounded-xl text-center text-slate-700 hover:text-[#00ade1] font-medium transition-all text-sm truncate">Valldemossa</a>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="p-3 bg-[#00ade1] hover:bg-[#0090bc] text-white rounded-xl text-center font-semibold transition-all text-sm truncate col-span-2 sm:col-span-1 shadow-sm">Map of Mallorca</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT CTA BANNER -->
+            <section class="bg-[#00ade1] py-14 text-white relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-6 max-w-3xl mx-auto leading-snug">
+                        Contact us now and receive all information you need to buy or sell a property
+                    </h3>
+                    <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block bg-white text-[#00ade1] hover:bg-slate-50 font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
+                        Contact us
+                    </a>
+                </div>
+            </section>
+
+            <!-- DOMPICK AI REAL ESTATE SUITE -->
+            <section id="ai-suite" class="py-16 bg-gradient-to-b from-slate-900 to-slate-950 text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00ade1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-10">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00ade1]/20 border border-[#00ade1]/40 text-[#00ade1] text-xs font-bold uppercase tracking-widest mb-3">
+                            <i class="fa-solid fa-microchip"></i> Powered by Gemini AI
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight uppercase text-white">DOMPICK AI REAL ESTATE SUITE</h2>
+                        <p class="text-slate-300 max-w-2xl mx-auto mt-3 text-base sm:text-lg">
+                            Smart AI tools for property search, personalized relocation advice, listing copywriting, and dream villa visualization.
+                        </p>
+                    </div>
+
+                    <!-- AI Suite Tabs Header -->
+                    <div class="flex justify-center mb-8 border-b border-slate-800">
+                        <div class="flex space-x-2 sm:space-x-4 overflow-x-auto pb-2 scrollbar-none">
+                            <button onclick="switchAiTab('advisor')" id="tabBtn-advisor" class="ai-tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl font-bold text-sm sm:text-base border-b-2 border-[#00ade1] text-[#00ade1] bg-slate-800/80 transition">
+                                <i class="fa-solid fa-comments"></i> AI Property Advisor
+                            </button>
+                            <button onclick="switchAiTab('copywriter')" id="tabBtn-copywriter" class="ai-tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl font-medium text-sm sm:text-base border-b-2 border-transparent text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-pen-nib"></i> AI Seller Copywriter
+                            </button>
+                            <button onclick="switchAiTab('visualizer')" id="tabBtn-visualizer" class="ai-tab-btn flex items-center gap-2 px-5 py-3 rounded-t-xl font-medium text-sm sm:text-base border-b-2 border-transparent text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-image"></i> AI Villa Visualizer
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 1: AI Property Advisor -->
+                    <div id="aiTab-advisor" class="ai-tab-content bg-slate-800/50 backdrop-blur-md rounded-2xl border border-slate-700/80 p-6 sm:p-8">
+                        <div class="max-w-3xl mx-auto">
+                            <div class="mb-4 text-center">
+                                <h3 class="text-xl font-bold text-white flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-compass text-[#00ade1]"></i> Ask the Dompick Mallorca AI Expert
+                                </h3>
+                                <p class="text-slate-400 text-sm mt-1">Get instant guidance on Mallorca regions, buying requirements, taxes, or international schools.</p>
+                            </div>
+
+                            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                                <button onclick="setAdvisorPrompt('What are the best towns in Mallorca for quiet coastal living with high-end villas?')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    🌊 Best quiet coastal towns
+                                </button>
+                                <button onclick="setAdvisorPrompt('Explain the key taxes and residency permits for buying a property in Mallorca as a non-EU citizen.')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    ⚖️ Non-resident buying taxes & residency
+                                </button>
+                                <button onclick="setAdvisorPrompt('I need a 4-bedroom villa with sea view in Santa Ponsa or Andratx for under 2.5 million Euros. What options should I look for?')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    🏡 Villa search in Andratx/Santa Ponsa
+                                </button>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="relative">
+                                    <textarea id="advisorQuery" rows="3" placeholder="Ask anything about buying property in Mallorca, Madrid, or Barcelona..." class="w-full bg-slate-900 border border-slate-700 text-white placeholder-slate-500 rounded-xl p-4 focus:outline-none focus:border-[#00ade1] focus:ring-1 focus:ring-[#00ade1] text-sm leading-relaxed"></textarea>
+                                </div>
+                                <button onclick="runAiAdvisor()" id="advisorSubmitBtn" class="w-full bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i> Ask AI Advisor
+                                </button>
+                            </div>
+
+                            <div id="advisorResult" class="hidden mt-6 bg-slate-900/90 border border-slate-700 rounded-xl p-5 text-slate-200 text-sm leading-relaxed whitespace-pre-line relative">
+                                <button onclick="copyToClipboard('advisorResultText')" class="absolute top-3 right-3 text-slate-400 hover:text-[#00ade1] text-xs px-2 py-1 rounded bg-slate-800 border border-slate-700">
+                                    <i class="fa-solid fa-copy"></i> Copy
+                                </button>
+                                <div id="advisorResultText" class="pr-12"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: AI Seller Copywriter -->
+                    <div id="aiTab-copywriter" class="ai-tab-content hidden bg-slate-800/50 backdrop-blur-md rounded-2xl border border-slate-700/80 p-6 sm:p-8">
+                        <div class="max-w-3xl mx-auto">
+                            <div class="mb-4 text-center">
+                                <h3 class="text-xl font-bold text-white flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-file-pen text-[#00ade1]"></i> Instant Listing Description Generator
+                                </h3>
+                                <p class="text-slate-400 text-sm mt-1">Sellers: Enter basic property highlights to generate high-converting listing text.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Property Type & Location</label>
+                                    <input id="sellerPropType" type="text" placeholder="e.g. Modern Villa in Port Andratx" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-[#00ade1]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Bedrooms / Bathrooms / Size</label>
+                                    <input id="sellerSpecs" type="text" placeholder="e.g. 4 Beds, 4 Baths, 350m², 1000m² plot" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-[#00ade1]">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Key Features & Selling Points</label>
+                                <textarea id="sellerFeatures" rows="3" placeholder="e.g. Panoramic sea view, infinity pool, newly renovated, underground garage, close to golf course, privacy" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-[#00ade1]"></textarea>
+                            </div>
+
+                            <div class="mb-6 flex gap-4">
+                                <div class="w-1/2">
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Language</label>
+                                    <select id="sellerLang" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-[#00ade1]">
+                                        <option value="English">English</option>
+                                        <option value="Spanish">Spanish</option>
+                                        <option value="German">German</option>
+                                    </select>
+                                </div>
+                                <div class="w-1/2">
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Tone</label>
+                                    <select id="sellerTone" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-[#00ade1]">
+                                        <option value="Luxury & Exclusive">Luxury & Exclusive</option>
+                                        <option value="Warm & Inviting">Warm & Inviting</option>
+                                        <option value="Modern & Investment-Focused">Modern & Investment-Focused</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button onclick="runAiCopywriter()" id="copywriterSubmitBtn" class="w-full bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-sparkles"></i> Generate Listing Description
+                            </button>
+
+                            <div id="copywriterResult" class="hidden mt-6 bg-slate-900/90 border border-slate-700 rounded-xl p-5 text-slate-200 text-sm leading-relaxed whitespace-pre-line relative">
+                                <button onclick="copyToClipboard('copywriterResultText')" class="absolute top-3 right-3 text-slate-400 hover:text-[#00ade1] text-xs px-2 py-1 rounded bg-slate-800 border border-slate-700">
+                                    <i class="fa-solid fa-copy"></i> Copy Listing
+                                </button>
+                                <div id="copywriterResultText" class="pr-12"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: AI Villa Visualizer -->
+                    <div id="aiTab-visualizer" class="ai-tab-content hidden bg-slate-800/50 backdrop-blur-md rounded-2xl border border-slate-700/80 p-6 sm:p-8">
+                        <div class="max-w-3xl mx-auto">
+                            <div class="mb-4 text-center">
+                                <h3 class="text-xl font-bold text-white flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-palette text-[#00ade1]"></i> AI Dream Villa & Interior Visualizer
+                                </h3>
+                                <p class="text-slate-400 text-sm mt-1">Visualize architectural concepts or interior design ideas for Mallorcan properties.</p>
+                            </div>
+
+                            <div class="flex flex-wrap justify-center gap-2 mb-4">
+                                <button onclick="setVisualizerPrompt('Ultra-luxury modern villa in Mallorca with infinity pool overlooking the Mediterranean sea, sunset lighting, photorealistic 8k')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    🏖️ Luxury Mediterranean Sea View Villa
+                                </button>
+                                <button onclick="setVisualizerPrompt('Authentic renovated Mallorcan rustic finca in Valldemossa with stone walls, wooden beams, lush garden and olive trees')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    🌿 Rustic Mallorcan Finca
+                                </button>
+                                <button onclick="setVisualizerPrompt('Modern penthouse living room in Palma Old Town with high ceilings, contemporary luxury furniture, and terrace access')" class="text-xs bg-slate-700/60 hover:bg-[#00ade1]/20 hover:text-[#00ade1] text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600/50 transition">
+                                    🌆 Palma Luxury Penthouse Interior
+                                </button>
+                            </div>
+
+                            <div class="space-y-4">
+                                <input id="visualizerPrompt" type="text" placeholder="Describe your dream home or interior design concept..." class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-4 text-sm focus:outline-none focus:border-[#00ade1]">
+                                <button onclick="runAiVisualizer()" id="visualizerSubmitBtn" class="w-full bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Visual Concept
+                                </button>
+                            </div>
+
+                            <div id="visualizerResult" class="hidden mt-6 text-center">
+                                <div class="relative inline-block rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+                                    <img id="visualizerImage" src="" alt="AI Generated Villa Concept" class="max-w-full h-auto max-h-[450px] object-cover mx-auto">
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Generated in real-time using Imagen on Gemini API</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUR SERVICES -->
+            <section class="py-16 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-extrabold text-slate-900 uppercase">OUR SERVICES</h2>
+                        <p class="text-slate-600 max-w-3xl mx-auto mt-3 text-lg">
+                            We offer integral services in real estate for buyers, sellers and holiday rentals
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Buyers -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" 
+                                     alt="House For Buyers Mallorca" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x300/e6f6fd/00ade1?text=For+Buyers'"
+                                     class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 w-10 h-10 bg-white/90 backdrop-blur text-[#00ade1] rounded-xl flex items-center justify-center text-lg shadow-sm">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">FOR BUYERS</h3>
+                                    <p class="text-sm font-semibold text-[#00ade1] mb-4">We help clients interested in buying a house in Mallorca</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                        First, we need to know what you are looking for: a finca? a villa? an apartment? how many bedrooms? swimming pool? golf? close to the beach? close to schools or hospitals?
+                                    </p>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block w-full text-center bg-[#00ade1] hover:bg-[#0090bc] text-white font-semibold py-3 rounded-xl transition shadow-sm">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sellers -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Selling Property Mallorca" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x300/e6f6fd/00ade1?text=For+Sellers'"
+                                     class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 w-10 h-10 bg-white/90 backdrop-blur text-[#00ade1] rounded-xl flex items-center justify-center text-lg shadow-sm">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">FOR SELLERS</h3>
+                                    <p class="text-sm font-semibold text-[#00ade1] mb-4">We help clients interested in selling a property in Mallorca</p>
+                                    <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fa-solid fa-check text-[#00ade1] mt-1 shrink-0"></i>
+                                            <span>We have access to an international network of potential buyers.</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fa-solid fa-check text-[#00ade1] mt-1 shrink-0"></i>
+                                            <span>We provide professional assessment on pricing and home staging.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block w-full text-center bg-[#00ade1] hover:bg-[#0090bc] text-white font-semibold py-3 rounded-xl transition shadow-sm">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Holiday Rentals -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                            <div class="h-44 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Holiday Rentals Mallorca" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x300/e6f6fd/00ade1?text=Holiday+Rentals'"
+                                     class="w-full h-full object-cover">
+                                <div class="absolute top-4 left-4 w-10 h-10 bg-white/90 backdrop-blur text-[#00ade1] rounded-xl flex items-center justify-center text-lg shadow-sm">
+                                    <i class="fa-solid fa-umbrella-beach"></i>
+                                </div>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-2 uppercase">FOR HOLIDAY RENTALS</h3>
+                                    <p class="text-sm font-semibold text-[#00ade1] mb-4">We also provide services of holiday rental management</p>
+                                    <ul class="space-y-3 text-slate-600 text-sm">
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fa-solid fa-circle-check text-[#00ade1] shrink-0"></i>
+                                            <span>Home staging and photography</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fa-solid fa-circle-check text-[#00ade1] shrink-0"></i>
+                                            <span>Promotion & Reservations</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block w-full text-center bg-[#00ade1] hover:bg-[#0090bc] text-white font-semibold py-3 rounded-xl transition shadow-sm">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOG / REAL ESTATE GUIDE SECTION -->
+            <section id="blog" class="py-16 bg-slate-50 border-t border-slate-100">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <span class="text-[#00ade1] font-bold text-sm uppercase tracking-wider">Property & Relocation Guides</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 uppercase mt-1">KNOW MORE ABOUT REAL ESTATE IN MALLORCA</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Article 1: Majorca Facts -->
+                        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/70 hover:shadow-lg transition flex flex-col group">
+                            <div class="h-52 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Majorca Coast facts" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e6f6fd/00ade1?text=Majorca+Facts'"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-[#00ade1] text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">Real Estate Guide</span>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-xl text-slate-900 mb-3 group-hover:text-[#00ade1] transition-colors">
+                                        7 Majorca facts: all you must know before coming
+                                    </h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        If you haven't been at Majorca or you just landed on the island, this is the ultimate guide with selected Majorca facts to help you navigate your first hours on this territory and avoid getting lost.
+                                    </p>
+                                </div>
+                                <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> 5 min read</span>
+                                    <button onclick="navigateTo('majorca-facts')" class="text-[#00ade1] font-bold hover:text-[#0090bc] text-sm inline-flex items-center gap-1">
+                                        Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 2: International Schools -->
+                        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/70 hover:shadow-lg transition flex flex-col group">
+                            <div class="h-52 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" 
+                                     alt="International schools Majorca" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e6f6fd/00ade1?text=International+Schools'"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-[#00ade1] text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">Living in Majorca</span>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-xl text-slate-900 mb-3 group-hover:text-[#00ade1] transition-colors">
+                                        International schools in Majorca
+                                    </h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        Majorca is one of the most prepared destinations for foreigners in Spain, due its abundance of high level British, IB, American, German and French international schools.
+                                    </p>
+                                </div>
+                                <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> 7 min read</span>
+                                    <button onclick="navigateTo('international-schools')" class="text-[#00ade1] font-bold hover:text-[#0090bc] text-sm inline-flex items-center gap-1">
+                                        Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Article 3: Opening Bank Account -->
+                        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/70 hover:shadow-lg transition flex flex-col group">
+                            <div class="h-52 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Opening bank account in Spain" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/600x400/e6f6fd/00ade1?text=Bank+Account+Spain'"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-[#00ade1] text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">Legal & Finance</span>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-xl text-slate-900 mb-3 group-hover:text-[#00ade1] transition-colors">
+                                        Opening a bank account in Spain for a non-resident
+                                    </h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        Opening a bank account in Spain might look very difficult but it's really not that complicated. Spanish legislation sets differences between residents and non-residents.
+                                    </p>
+                                </div>
+                                <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
+                                    <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> 6 min read</span>
+                                    <button onclick="navigateTo('bank-account')" class="text-[#00ade1] font-bold hover:text-[#0090bc] text-sm inline-flex items-center gap-1">
+                                        Read More <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRUST AND EXPERIENCE -->
+            <section class="py-12 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-2xl font-extrabold text-slate-900 uppercase mb-4">TRUST AND EXPERIENCE</h2>
+                    <p class="text-slate-600 text-sm max-w-3xl mx-auto mb-8">
+                        We have participated in well-known entrepreneurship programs and have collaborations with real estate organizations and universities.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-slate-500 font-bold text-sm">
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">ellas2</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">US Embassy</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">RTVE</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">Altamira</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">Sareb</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">Servihabitat</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">uc3m</span>
+                        <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-[#00ade1] transition">urjc</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT DOMPICK -->
+            <section id="about" class="py-16 bg-slate-50 border-t border-slate-100">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-extrabold text-slate-900 uppercase">ABOUT DOMPICK</h2>
+                        <p class="text-[#00ade1] font-semibold mt-2">Leading real estate network in Mallorca</p>
+                    </div>
+
+                    <div class="space-y-4 text-slate-600 text-base leading-relaxed text-justify sm:text-left">
+                        <p>
+                            Dompick has the largest portfolio of properties in Mallorca thanks to its wide network and partnerships with the most selected real estate agencies. We established partnerships with more than 150 agencies and have a portfolio of more than 7,000 properties.
+                        </p>
+                        <p>
+                            We offer a unique, high quality service. Our team is passionate to get always the best deal for you in property transactions. All steps of the purchase are professionally addressed. And with no hidden costs for the buyer, 100% transparency.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT US -->
+            <section id="contact" class="py-16 bg-white border-t border-slate-100">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 uppercase mb-6">CONTACT US</h2>
+                            <div class="space-y-4 text-slate-700 font-medium">
+                                <p class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-location-dot text-[#00ade1] text-lg w-6"></i>
+                                    <span>Calle Piamonte 23, 28004 Madrid</span>
+                                </p>
+                                <p class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-envelope text-[#00ade1] text-lg w-6"></i>
+                                    <a href="mailto:hola@dompick.com" class="hover:text-[#00ade1]">hola@dompick.com</a>
+                                </p>
+                                <p class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-phone text-[#00ade1] text-lg w-6"></i>
+                                    <a href="tel:+34637900413" class="hover:text-[#00ade1]">+34 637 900 413</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                                <div>
+                                    <label for="email" class="block text-sm font-bold text-slate-700 mb-1">Email *</label>
+                                    <input type="email" id="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00ade1]">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-bold text-slate-700 mb-1">Message *</label>
+                                    <textarea id="message" rows="4" required placeholder="How can we help you?" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#00ade1]"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold py-3.5 rounded-xl shadow transition">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE 2: 7 MAJORCA FACTS ARTICLE ================= -->
+        <div id="page-majorca-facts" class="view-page">
+            <!-- Article Banner Header -->
+            <section class="relative bg-slate-900 py-20 text-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1920&q=80" 
+                     alt="Majorca Coastline" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+                <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+                    <button onclick="navigateTo('home', 'blog')" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 transition">
+                        <i class="fa-solid fa-arrow-left"></i> Back to all guides
+                    </button>
+                    <span class="block text-[#00ade1] font-bold text-sm tracking-widest uppercase mb-2">Real Estate & Lifestyle Guide</span>
+                    <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight uppercase">
+                        7 Majorca facts: all you must know before coming
+                    </h1>
+                    <p class="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+                        Essential local knowledge, dialects, climate secrets, and regional highlights before buying your home on the island.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Article Content Section -->
+            <section class="py-16 bg-white">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose-custom">
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed">
+                        If you haven't been to Majorca or you just landed on the island, this is the ultimate guide with selected Majorca facts to help you navigate your first hours on this territory and avoid getting lost.
+                    </p>
+
+                    <div class="my-8 p-6 bg-[#e6f6fd] border-l-4 border-[#00ade1] rounded-r-2xl">
+                        <h4 class="text-[#0090bc] font-bold text-base mb-1">Quick Fact Overview:</h4>
+                        <p class="text-slate-700 text-sm mb-0">Mallorca combines 300+ sunny days a year, rich Catalan-Mallorquín linguistic heritage, World Heritage mountains, and a thriving international property market.</p>
+                    </div>
+
+                    <h3>Fact 1: The Local Language & Dialect (Mallorquín)</h3>
+                    <p>
+                        Even though Spanish is the official national language, 6 of Spain’s 17 autonomous communities have co-official languages. In the Balearic Islands, Catalan is widely spoken alongside Spanish. The local variant used in daily life is <strong>Mallorquín</strong>.
+                    </p>
+                    <p>
+                        It has very distinctive traits, such as replacing standard masculine and feminine articles (<em>el / la</em>) with <em>se / sa</em>. Rest assured that every Mallorquín-speaking resident also speaks fluent Spanish.
+                    </p>
+                    <p>
+                        Local words to know:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+                        <li><strong>"Mem"</strong>: Colloquialism roughly translating to "Let's see..."</li>
+                        <li><strong>"Ses cames em fan figa"</strong>: "My legs are turning into figs" (Meaning: I am exhausted from walking!).</li>
+                        <li><strong>"Gràcis"</strong>: Thank you in local dialect.</li>
+                        <li><strong>Prefixes "Can", "Son", and "Bini"</strong>: Frequently used in town and property names (e.g., Son Vida, Can Pastilla). "Son" historically denotes ancestral family property dating back centuries.</li>
+                    </ul>
+
+                    <h3>Fact 2: Exceptionally Mild Weather & 300 Days of Sun</h3>
+                    <p>
+                        The climate in Mallorca is enviable all year round. In summer, temperatures range pleasantly from 18°C to 30°C (64°F to 86°F), while winter averages a mild 8°C to 16°C.
+                    </p>
+                    <p>
+                        Most impressively, Mallorca averages only 52 days of rain per year. Compared to London, Paris, or Berlin, you are almost guaranteed glorious sunny weather during your stay or relocation.
+                    </p>
+
+                    <h3>Fact 3: Diverse Coastal & Mountain Regions</h3>
+                    <p>
+                        The island is geographically divided into distinct zones, each offering unique real estate options:
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 my-6">
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">South-West (Calvià & Andratx)</h5>
+                            <p class="text-xs text-slate-600 mb-0">High-end luxury villas, marinas, vibrant expat communities, and golf courses.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">North (Pollença & Alcúdia)</h5>
+                            <p class="text-xs text-slate-600 mb-0">Dramatic bay views, historic old towns, family atmosphere, and tranquility.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">Palma & Surrounding Area</h5>
+                            <p class="text-xs text-slate-600 mb-0">Dynamic city life, historic penthouses, fine dining, and year-round connectivity.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">Central & Tramontana</h5>
+                            <p class="text-xs text-slate-600 mb-0">Rustic stone fincas, olive groves, mountain peak views, total peace and privacy.</p>
+                        </div>
+                    </div>
+
+                    <h3>Fact 4: Island Population & Top Cities</h3>
+                    <p>
+                        Majorca is the largest of the Balearic Islands, with a permanent population of over 900,000 residents across a landmass of 3,640 km². The capital city, Palma de Mallorca, houses nearly half of the island’s population, making it a bustling Mediterranean hub with world-class medical facilities and international infrastructure.
+                    </p>
+
+                    <h3>Fact 5: UNESCO World Heritage Tramontana Mountains</h3>
+                    <p>
+                        The Serra de Tramontana mountain range stretches along the northwest coast and was awarded UNESCO World Heritage status for its stunning terraced agricultural landscape, dry-stone structures, and dramatic sea cliffs. It offers world-famous cycling routes, hiking trails, and picturesque villages like Valldemossa, Deià, and Fornalutx.
+                    </p>
+
+                    <h3>Fact 6: Gastronomic Delights</h3>
+                    <p>
+                        Mallorcan cuisine goes far beyond seaside seafood. Iconically, you will spot passengers at Palma Airport carrying octagonal cardboard boxes filled with freshly baked <strong>Ensaimadas</strong> (spiral pastries sprinkled with powdered sugar).
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+                        <li><strong>Sobrasada</strong>: Cured raw sausage spread seasoned with sweet paprika.</li>
+                        <li><strong>Coca de Trampó</strong>: Traditional flatbread topped with diced bell peppers, onions, and olive oil.</li>
+                        <li><strong>Frit Mallorquí</strong>: A traditional hearty pan-fry of meat, potatoes, garlic, and fresh peppers.</li>
+                    </ul>
+
+                    <h3>Fact 7: Hidden Secrets & Royal Heritage</h3>
+                    <p>
+                        Did you know that <em>The Times</em> once voted Palma de Mallorca as the #1 best city in the world to live in? Furthermore:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+                        <li>The Spanish Royal Family traditionally spends their summer holidays in Mallorca at the Marivent Palace.</li>
+                        <li>Palma’s Cathedral (<em>La Seu</em>) is one of the world's few Gothic cathedrals built directly overlooking the sea frontage.</li>
+                        <li>Over 80 historic watchtowers guard the coastline, originally built in the 16th century to spot pirate fleets.</li>
+                    </ul>
+
+                    <!-- Article CTA Box -->
+                    <div class="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center shadow-xl">
+                        <h4 class="text-2xl font-bold mb-3">Ready to find your house in Mallorca?</h4>
+                        <p class="text-slate-300 text-sm mb-6 max-w-lg mx-auto">Explore Dompick's extensive portfolio of luxury villas, seaside apartments, and rustic fincas across all regions of Mallorca.</p>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold px-8 py-3 rounded-full transition">
+                            Contact Dompick Agents
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE 3: INTERNATIONAL SCHOOLS ARTICLE ================= -->
+        <div id="page-international-schools" class="view-page">
+            <!-- Article Banner Header -->
+            <section class="relative bg-slate-900 py-20 text-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80" 
+                     alt="International Schools Mallorca" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+                <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+                    <button onclick="navigateTo('home', 'blog')" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 transition">
+                        <i class="fa-solid fa-arrow-left"></i> Back to all guides
+                    </button>
+                    <span class="block text-[#00ade1] font-bold text-sm tracking-widest uppercase mb-2">Expat Family & Education Guide</span>
+                    <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight uppercase">
+                        International schools in Majorca
+                    </h1>
+                    <p class="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+                        A complete guide to British, IB, American, German, and French schools for families relocating to Mallorca.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Article Content Section -->
+            <section class="py-16 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose-custom">
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed">
+                        Majorca is one of the most prepared destinations for international families in Europe. Thanks to its established cosmopolitan population, the island boasts an exceptional selection of private international schools offering British, International Baccalaureate (IB), German, French, and Swedish curricula.
+                    </p>
+
+                    <h3>Why Move to Mallorca with Children?</h3>
+                    <p>
+                        Relocating to Mallorca offers children an outdoor lifestyle, multi-lingual fluency, and safety. Most international schools teach primarily in English or German while providing mandatory Spanish and Catalan lessons, enabling children to become effortlessly bi- or tri-lingual.
+                    </p>
+
+                    <!-- LIST OF INTERNATIONAL SCHOOLS TABLE -->
+                    <h3>List of international schools in Mallorca</h3>
+                    <div class="my-6 overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
+                        <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[650px]">
+                            <thead>
+                                <tr class="bg-slate-800 text-white font-bold uppercase tracking-wider">
+                                    <th class="py-3.5 px-4">School</th>
+                                    <th class="py-3.5 px-3">Year</th>
+                                    <th class="py-3.5 px-3">Language</th>
+                                    <th class="py-3.5 px-3">Students</th>
+                                    <th class="py-3.5 px-3">Access</th>
+                                    <th class="py-3.5 px-4">Infrastructure</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-slate-700">
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Bellver International</td>
+                                    <td class="py-3 px-3">1950</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+240</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Canteen + extracurricular activities</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Queen College</td>
+                                    <td class="py-3 px-3">1977</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+370</td>
+                                    <td class="py-3 px-3">Ficha</td>
+                                    <td class="py-3 px-4">Patios + canteen</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Agora Portals</td>
+                                    <td class="py-3 px-3">1989</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+300</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Sports club + chess + canteen</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">The Academy</td>
+                                    <td class="py-3 px-3">1985</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+315</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Canteen + Sports club + park + pool</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">British International</td>
+                                    <td class="py-3 px-3">1957</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+500</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Sports club + pool + comedor</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">King Richard III College</td>
+                                    <td class="py-3 px-3">1998</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold text-xs">English</span></td>
+                                    <td class="py-3 px-3 font-semibold">+350</td>
+                                    <td class="py-3 px-3">Ficha matrícula</td>
+                                    <td class="py-3 px-4">Sports club + pool + teatro</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Lycée de Palma</td>
+                                    <td class="py-3 px-3">1977</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 font-semibold text-xs">French</span></td>
+                                    <td class="py-3 px-3 font-semibold">+400</td>
+                                    <td class="py-3 px-3">Ficha matrícula</td>
+                                    <td class="py-3 px-4">Sports club + canteen</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Deutsche Internationale</td>
+                                    <td class="py-3 px-3">2002</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold text-xs">German</span></td>
+                                    <td class="py-3 px-3 font-semibold">+110</td>
+                                    <td class="py-3 px-3">Ficha matrícula</td>
+                                    <td class="py-3 px-4">Pool + canteen</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">Ecolea Internationale</td>
+                                    <td class="py-3 px-3">2013</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold text-xs">German</span></td>
+                                    <td class="py-3 px-3 font-semibold">+340</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Sports club + canteen</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="py-3 px-4 font-bold text-slate-900">The Swedish School</td>
+                                    <td class="py-3 px-3">1985</td>
+                                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold text-xs">Swedish</span></td>
+                                    <td class="py-3 px-3 font-semibold">+100</td>
+                                    <td class="py-3 px-3">Interview</td>
+                                    <td class="py-3 px-4">Sports club + teatro + canteen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Top British Curriculum Schools in Mallorca</h3>
+                    <p>
+                        British schools are the most prevalent on the island, preparing students for Cambridge IGCSEs and A-Levels:
+                    </p>
+
+                    <div class="space-y-4 my-6">
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-[#00ade1] transition">
+                            <div class="flex justify-between items-start">
+                                <h5 class="font-bold text-slate-900 text-base">Baleares International College (BIC)</h5>
+                                <span class="text-xs font-semibold bg-[#e6f6fd] text-[#00ade1] px-2.5 py-1 rounded-full">Sa Porrassa & Sant Agustí</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2 mb-0">Offers a complete British curriculum from ages 2 to 18 across two state-of-the-art campuses near Palma and Calvià.</p>
+                        </div>
+
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-[#00ade1] transition">
+                            <div class="flex justify-between items-start">
+                                <h5 class="font-bold text-slate-900 text-base">Bellver International College</h5>
+                                <span class="text-xs font-semibold bg-[#e6f6fd] text-[#00ade1] px-2.5 py-1 rounded-full">Marivent, Palma</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2 mb-0">Founded in 1950, Bellver is the longest-established private British school in Spain, located close to the Royal Palace in Palma.</p>
+                        </div>
+
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-[#00ade1] transition">
+                            <div class="flex justify-between items-start">
+                                <h5 class="font-bold text-slate-900 text-base">Queen's College</h5>
+                                <span class="text-xs font-semibold bg-[#e6f6fd] text-[#00ade1] px-2.5 py-1 rounded-full">Bonanova, Palma</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2 mb-0">Set near Bellver forest with magnificent views over Palma bay, offering high academic standards for ages 3 to 18.</p>
+                        </div>
+
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-[#00ade1] transition">
+                            <div class="flex justify-between items-start">
+                                <h5 class="font-bold text-slate-900 text-base">The Academy International School</h5>
+                                <span class="text-xs font-semibold bg-[#e6f6fd] text-[#00ade1] px-2.5 py-1 rounded-full">Marratxí countryside</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2 mb-0">Situated in 7 acres of grounds with playing fields and swimming pools, offering an immersive rural environment outside Palma.</p>
+                        </div>
+
+                        <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-[#00ade1] transition">
+                            <div class="flex justify-between items-start">
+                                <h5 class="font-bold text-slate-900 text-base">Myschool - Mallorca International School</h5>
+                                <span class="text-xs font-semibold bg-[#e6f6fd] text-[#00ade1] px-2.5 py-1 rounded-full">Sa Pobla (North Mallorca)</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2 mb-0">The premier international school for families purchasing property in Pollença, Alcúdia, or northern Mallorca.</p>
+                        </div>
+                    </div>
+
+                    <h3>International Baccalaureate (IB) & Specialized Academies</h3>
+                    <ul class="list-disc pl-6 space-y-3 text-slate-600 mb-6">
+                        <li><strong>Agora Portals International School (Portal Nous)</strong>: Highly respected school in the southwest offering both the IB Diploma and Spanish Bachillerato with top sports facilities.</li>
+                        <li><strong>Eurocampus Deutsche Schule (El Terreno, Palma)</strong>: The only officially recognized German international school on Mallorca.</li>
+                        <li><strong>Lycée Français International de Palma</strong>: French national curriculum school serving ages 3 to 18.</li>
+                        <li><strong>Rafa Nadal International School (Manacor)</strong>: Combines elite sports coaching with American high school and British qualifications.</li>
+                    </ul>
+
+                    <h3>Dompick Advice for Parents</h3>
+                    <p>
+                        When choosing a property in Mallorca, proximity to your preferred school is a key factor. School bus lines cover major areas, but living within a 15-minute drive of Calvià, Marratxí, or Palma ensures smooth daily commutes. Contact Dompick for properties situated in top school catchments.
+                    </p>
+
+                    <!-- Article CTA Box -->
+                    <div class="mt-12 p-8 bg-[#e6f6fd] border border-[#00ade1]/30 rounded-2xl text-center shadow-md">
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Looking for a Family Home near International Schools?</h4>
+                        <p class="text-slate-600 text-sm mb-6 max-w-lg mx-auto">Our sales managers can filter properties by school district and family amenities across Mallorca.</p>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold px-8 py-3 rounded-full transition shadow">
+                            Ask Dompick School Specialists
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PAGE 4: OPENING BANK ACCOUNT ARTICLE ================= -->
+        <div id="page-bank-account" class="view-page">
+            <!-- Article Banner Header -->
+            <section class="relative bg-slate-900 py-20 text-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80" 
+                     alt="Opening Bank Account Spain" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent"></div>
+                <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+                    <button onclick="navigateTo('home', 'blog')" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 transition">
+                        <i class="fa-solid fa-arrow-left"></i> Back to all guides
+                    </button>
+                    <span class="block text-[#00ade1] font-bold text-sm tracking-widest uppercase mb-2">Legal & Financial Guide</span>
+                    <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight uppercase">
+                        Opening a bank account in Spain for a non-resident
+                    </h1>
+                    <p class="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+                        Clear legal guidelines, required documentation, and step-by-step procedures to open your Spanish bank account.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Article Content Section -->
+            <section class="py-16 bg-white">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose-custom">
+                    <p class="text-lg text-slate-700 font-medium leading-relaxed">
+                        Opening a bank account in Spain might look intimidating at first, but it is actually straightforward when you have the right guidance and paperwork prepared.
+                    </p>
+
+                    <h3>Why Do You Need a Spanish Bank Account?</h3>
+                    <p>
+                        If you plan to buy a house in Mallorca or anywhere in Spain, having a Spanish bank account is essential. You will need it to:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+                        <li>Pay the property deposit and issue a bank-guaranteed cheque (<em>cheque bancario</em>) at the notary signing.</li>
+                        <li>Set up direct debits for local property taxes (IBI, garbage fees).</li>
+                        <li>Pay utility bills (water, electricity, high-speed internet, community fees).</li>
+                        <li>Apply for a Spanish mortgage.</li>
+                    </ul>
+
+                    <h3>Resident vs. Non-Resident Accounts</h3>
+                    <p>
+                        Spanish banking law establishes a distinction between resident accounts (for individuals spending more than 183 days per year in Spain) and non-resident accounts:
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 my-6">
+                        <div class="p-5 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">Non-Resident Account</h5>
+                            <p class="text-xs text-slate-600 mb-0">Designed for foreign buyers, holiday home owners, or investors before officially moving. Requires periodic non-residency verification.</p>
+                        </div>
+                        <div class="p-5 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h5 class="font-bold text-slate-900 mb-1 text-sm">Resident Account</h5>
+                            <p class="text-xs text-slate-600 mb-0">For full-time residents with a tax residency certificate or Spanish residency card (TIE). Lower maintenance fees.</p>
+                        </div>
+                    </div>
+
+                    <h3>Documents Required to Open a Non-Resident Account</h3>
+                    <p>
+                        To comply with Spanish anti-money laundering (AML) regulations, major banks will request the following documents:
+                    </p>
+                    <ol class="list-decimal pl-6 space-y-3 text-slate-600 mb-6">
+                        <li><strong>Valid Passport or National ID Card</strong>: Must be original and valid.</li>
+                        <li><strong>NIE Number (Número de Identidad de Extranjero)</strong>: Your legal Spanish tax identification number. Dompick can assist you in obtaining this.</li>
+                        <li><strong>Proof of Income / Employment</strong>: Payslips, recent tax return, or audited company accounts demonstrating funds origin.</li>
+                        <li><strong>Proof of Address</strong>: Recent utility bill or bank statement from your home country.</li>
+                        <li><strong>Certificate of Non-Residency (Certificado de No Residente)</strong>: Issued by Spanish police or requested directly by the bank on your behalf for a small processing fee.</li>
+                    </ol>
+
+                    <h3>Which Spanish Banks Are Best for Foreign Buyers?</h3>
+                    <p>
+                        In Mallorca, major national banks have dedicated international branches with English, German, and French-speaking staff:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+                        <li><strong>CaixaBank (HolaBank)</strong>: Excellent international service packages tailored specifically for non-resident property owners.</li>
+                        <li><strong>Banco Santander</strong>: Wide network of branches across Mallorca with English mobile banking app options.</li>
+                        <li><strong>Sabadell (KeyAccount)</strong>: Dedicated multi-lingual advisors for home buyers and foreign investors.</li>
+                        <li><strong>BBVA</strong>: Seamless digital onboarding and robust online banking capabilities.</li>
+                    </ul>
+
+                    <h3> Dompick Expert Tips for Smooth Transactions</h3>
+                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl my-6">
+                        <ul class="space-y-3 text-sm text-slate-700 mb-0">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#00ade1] mt-1"></i>
+                                <span><strong>Start early:</strong> Open your account at least 3-4 weeks prior to completion at the notary.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#00ade1] mt-1"></i>
+                                <span><strong>Transfer currency safely:</strong> Use specialist currency exchange brokers to avoid high bank transfer commission fees when moving funds to Spain.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-[#00ade1] mt-1"></i>
+                                <span><strong>Complete NIE and Bank setup together:</strong> Our legal partners manage both steps simultaneously so your property purchase is stress-free.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Article CTA Box -->
+                    <div class="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center shadow-xl">
+                        <h4 class="text-2xl font-bold mb-2">Need Assistance with Banking & Legal Setup?</h4>
+                        <p class="text-slate-300 text-sm mb-6 max-w-lg mx-auto">Dompick supports buyers with NIE registration, legal representation, tax advice, and banking introductions in Mallorca.</p>
+                        <a href="#contact" onclick="navigateTo('home', 'contact')" class="inline-block bg-[#00ade1] hover:bg-[#0090bc] text-white font-bold px-8 py-3 rounded-full transition">
+                            Get Free Legal & Banking Guidance
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 pt-12 pb-24 sm:pb-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+                <!-- Column 1: Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase">CONTACT</h4>
+                    <p class="text-sm text-slate-400">Phone +34 637 900 413</p>
+                    <p class="text-sm text-slate-400">Whatsapp +34 637 900 413</p>
+                    <p class="text-sm text-slate-400">hola@dompick.com</p>
+                </div>
+
+                <!-- Column 2: Quick Links & Guides -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase">MALLORCA GUIDES</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><button onclick="navigateTo('majorca-facts')" class="hover:text-white transition">7 Majorca Facts Guide</button></li>
+                        <li><button onclick="navigateTo('international-schools')" class="hover:text-white transition">International Schools in Mallorca</button></li>
+                        <li><button onclick="navigateTo('bank-account')" class="hover:text-white transition">Opening Spanish Bank Account</button></li>
+                        <li><a href="#home" onclick="navigateTo('home', 'ai-suite')" class="hover:text-white transition">Dompick AI Real Estate Tools</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Follow Us & Brand -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 uppercase">DOMPICK NETWORK</h4>
+                    <div class="flex items-center space-x-1 text-2xl mb-4">
+                        <span class="font-light text-[#00ade1]">dompick</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Largest selection of properties in Mallorca, Madrid & Barcelona.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-xs text-slate-500">
+                Copyright © 2026 Dompick Real Estate. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="fixed bottom-0 inset-x-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs sm:text-sm text-slate-300 text-center sm:text-left">
+                We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.
+            </p>
+            <button onclick="acceptCookies()" class="bg-[#00ade1] hover:bg-[#0090bc] text-white px-6 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition">
+                Ok
+            </button>
+        </div>
+    </div>
+
+    <!-- FLOATING AI ASSISTANT FAB BUTTON -->
+    <button onclick="navigateTo('home', 'ai-suite')" aria-label="Open AI Assistant" class="fixed bottom-20 right-6 z-40 bg-[#00ade1] hover:bg-[#0090bc] text-white p-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2 border-2 border-white/20">
+        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+        <span class="hidden sm:inline font-bold text-sm">AI Assistant</span>
+    </button>
+
+    <!-- SUBMISSION CONFIRMATION MODAL -->
+    <div id="statusModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-xl">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Message Sent!</h3>
+            <p class="text-slate-600 text-sm mb-6">Thank you for reaching out to Dompick. Our real estate sales manager will contact you shortly.</p>
+            <button onclick="closeStatusModal()" class="w-full bg-[#00ade1] text-white font-bold py-2.5 rounded-xl hover:bg-[#0090bc] transition">Close</button>
+        </div>
+    </div>
+
+    <!-- SCRIPT SECTION & SINGLE-PAGE ROUTING LOGIC -->
+    <script>
+        /* Page View Switcher & Hash Router */
+        function navigateTo(pageId, sectionId) {
+            const pages = ['home', 'majorca-facts', 'international-schools', 'bank-account'];
+            
+            pages.forEach(p => {
+                const elem = document.getElementById(`page-${p}`);
+                if (elem) {
+                    if (p === pageId) {
+                        elem.classList.add('active');
+                    } else {
+                        elem.classList.remove('active');
+                    }
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (sectionId) {
+                setTimeout(() => {
+                    const sec = document.getElementById(sectionId);
+                    if (sec) {
+                        sec.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            /* Mobile Navbar Toggle Functionality */
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            /* Handle Hash URL Navigation */
+            const currentHash = window.location.hash.replace('#', '');
+            if (currentHash === 'majorca-facts' || currentHash === 'international-schools' || currentHash === 'bank-account') {
+                navigateTo(currentHash);
+            }
+        });
+
+        /* Cookie Banner Handler */
+        function acceptCookies() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+        }
+
+        /* Form Submission Handler */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const modal = document.getElementById('statusModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+            document.getElementById('contactForm').reset();
+        }
+
+        function closeStatusModal() {
+            const modal = document.getElementById('statusModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function switchAiTab(tabName) {
+            const tabs = ['advisor', 'copywriter', 'visualizer'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tabBtn-${t}`);
+                const content = document.getElementById(`aiTab-${t}`);
+                if (t === tabName) {
+                    btn.classList.add('border-[#00ade1]', 'text-[#00ade1]', 'bg-slate-800/80', 'font-bold');
+                    btn.classList.remove('border-transparent', 'text-slate-400', 'font-medium');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('border-[#00ade1]', 'text-[#00ade1]', 'bg-slate-800/80', 'font-bold');
+                    btn.classList.add('border-transparent', 'text-slate-400', 'font-medium');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        function setAdvisorPrompt(text) {
+            document.getElementById('advisorQuery').value = text;
+        }
+
+        function setVisualizerPrompt(text) {
+            document.getElementById('visualizerPrompt').value = text;
+        }
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            const tempElem = document.createElement('textarea');
+            tempElem.value = text;
+            document.body.appendChild(tempElem);
+            tempElem.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempElem);
+            alert('Copied to clipboard!');
+        }
+
+        async function fetchWithBackoff(url, options, maxRetries = 3) {
+            let delay = 1000;
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return response;
+                    if (response.status !== 429 && response.status < 500) {
+                        return response;
+                    }
+                } catch (e) {
+                    if (i === maxRetries - 1) throw e;
+                }
+                await new Promise(res => setTimeout(res, delay));
+                delay *= 2;
+            }
+            return fetch(url, options);
+        }
+
+        /* 1. AI Property Advisor */
+        async function runAiAdvisor() {
+            const query = document.getElementById('advisorQuery').value.trim();
+            if (!query) return;
+
+            const btn = document.getElementById('advisorSubmitBtn');
+            const resultBox = document.getElementById('advisorResult');
+            const resultText = document.getElementById('advisorResultText');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Consulting AI Expert...`;
+            resultBox.classList.remove('hidden');
+            resultText.innerHTML = `<span class="animate-pulse text-slate-400">Analyzing real estate knowledge for Mallorca...</span>`;
+
+            const systemPrompt = "You are Dompick's senior real estate expert and concierge in Mallorca, Madrid, and Barcelona. Provide helpful, accurate, polished, and friendly advice regarding property choices, coastal locations, taxes, residency, or local lifestyle in Spain.";
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: query }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    resultText.innerText = text;
+                } else {
+                    resultText.innerText = "Sorry, unable to retrieve recommendations right now. Please try again.";
+                }
+            } catch (err) {
+                resultText.innerText = "An error occurred while connecting to the AI service.";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Ask AI Advisor`;
+            }
+        }
+
+        /* 2. AI Seller Copywriter */
+        async function runAiCopywriter() {
+            const propType = document.getElementById('sellerPropType').value.trim();
+            const specs = document.getElementById('sellerSpecs').value.trim();
+            const features = document.getElementById('sellerFeatures').value.trim();
+            const lang = document.getElementById('sellerLang').value;
+            const tone = document.getElementById('sellerTone').value;
+
+            if (!propType && !features) {
+                alert("Please enter at least property type or features!");
+                return;
+            }
+
+            const btn = document.getElementById('copywriterSubmitBtn');
+            const resultBox = document.getElementById('copywriterResult');
+            const resultText = document.getElementById('copywriterResultText');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Writing Listing Copy...`;
+            resultBox.classList.remove('hidden');
+            resultText.innerHTML = `<span class="animate-pulse text-slate-400">Crafting high-converting real estate text...</span>`;
+
+            const prompt = `Write a compelling property listing description in ${lang} with a ${tone} tone for Dompick Real Estate.\nProperty Type/Location: ${propType}\nSpecifications: ${specs}\nKey Highlights: ${features}\nInclude a catchy title, descriptive paragraphs, bullet points of key features, and a call to contact Dompick.`;
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    resultText.innerText = text;
+                } else {
+                    resultText.innerText = "Unable to generate copy. Please check inputs and try again.";
+                }
+            } catch (err) {
+                resultText.innerText = "Error contacting Gemini API.";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-sparkles"></i> Generate Listing Description`;
+            }
+        }
+
+        /* 3. AI Villa Visualizer */
+        async function runAiVisualizer() {
+            const userPrompt = document.getElementById('visualizerPrompt').value.trim();
+            if (!userPrompt) {
+                alert("Please enter a description for the villa or interior!");
+                return;
+            }
+
+            const btn = document.getElementById('visualizerSubmitBtn');
+            const resultBox = document.getElementById('visualizerResult');
+            const imgElem = document.getElementById('visualizerImage');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Rendering Image (approx. 5-10s)...`;
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
+            const payload = {
+                instances: [{ prompt: userPrompt }],
+                parameters: { sampleCount: 1 }
+            };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    imgElem.src = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    resultBox.classList.remove('hidden');
+                } else {
+                    alert("Image generation was unable to render this prompt. Try adjusting the keywords.");
+                }
+            } catch (err) {
+                alert("Error during image generation API call.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Visual Concept`;
+            }
+        }
+    </script>
+</body>
+</html>
