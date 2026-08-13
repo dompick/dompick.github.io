@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALQUILER VACACIONAL EN MALLORCA - Dompick Real Estate</title>
+    <!-- Favicon SVG with Dompick Yellow & Green Palette -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23277647' d='M50 5 L10 40 H25 V85 H75 V40 H90 Z'/><path fill='%23F1C40F' d='M50 25 L30 45 H40 V75 H60 V45 H70 Z'/></svg>">
+    
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dompick: {
+                            green: '#277647',
+                            greenDark: '#1C5834',
+                            greenLight: '#EBF4EE',
+                            yellow: '#F1C40F',
+                            yellowHover: '#D4AC0D',
+                            yellowLight: '#FEF9E7',
+                            dark: '#2C3E50',
+                            grayBg: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #334155;
+            background-color: #F8FAFC;
+        }
+
+        .header-top-bar {
+            background-color: #2C3E50;
+            color: #ECF0F1;
+        }
+
+        .badge-yellow {
+            background-color: #F1C40F;
+            color: #1A252C;
+            font-weight: 700;
+        }
+
+        .gradient-banner {
+            background: linear-gradient(135deg, #1C5834 0%, #277647 50%, #349658 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(39, 118, 71, 0.1), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 6.5rem;
+        }
+
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: #277647;
+            border-bottom-color: #F1C40F;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 118, 71, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(39, 118, 71, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 118, 71, 0); }
+        }
+
+        .whatsapp-btn {
+            animation: pulse-ring 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <div class="header-top-bar text-xs py-2 px-4 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <a href="tel:+34637900413" class="flex items-center space-x-2 hover:text-dompick-yellow transition">
+                    <svg class="w-3.5 h-3.5 text-dompick-yellow" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    <span>+34 637 900 413</span>
+                </a>
+                <a href="https://wa.me/34637900413" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 hover:text-dompick-yellow transition">
+                    <svg class="w-3.5 h-3.5 text-dompick-green" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:hola@dompick.com" class="hidden md:flex items-center space-x-2 hover:text-dompick-yellow transition">
+                    <svg class="w-3.5 h-3.5 text-dompick-yellow" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <span>hola@dompick.com</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-xs text-slate-300">Mallorca · Madrid</span>
+                <span class="bg-dompick-green text-white text-[10px] font-bold px-2 py-0.5 rounded">ES</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-dompick-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-dompick-yellow shadow-md group-hover:border-dompick-yellow group-hover:text-dompick-yellowHover transition p-1.5">
+                        <!-- SVG Shape of the Island of Mallorca -->
+                        <svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100" aria-label="Isla de Mallorca">
+                            <path d="M 58,92 C 52,88 48,80 46,74 C 43,67 36,63 32,67 C 28,70 24,73 20,72 C 15,71 8,68 10,62 C 12,56 20,48 28,40 C 36,32 46,24 58,18 C 68,13 78,10 88,8 C 85,14 78,18 75,22 C 78,25 82,24 84,27 C 81,31 74,33 72,39 C 76,42 82,38 88,36 C 92,35 95,38 95,44 C 94,52 90,60 84,68 C 78,76 72,82 66,88 C 62,91 60,92 58,92 Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-light text-dompick-dark tracking-tight">dompick</span>
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-dompick-green -mt-1">VACACIONAL</span>
+                    </div>
+                </a>
+
+                <!-- Navigation links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-700">
+                    <a href="#" class="nav-link py-2">Inicio</a>
+                    <a href="#en-que-consiste" class="nav-link py-2">En qué consiste</a>
+                    <a href="#nuestro-trabajo" class="nav-link py-2">Nuestro Trabajo</a>
+                    <a href="#nuestro-equipo" class="nav-link py-2">Nuestro Equipo</a>
+                    <a href="#nuestros-clientes" class="nav-link py-2">Nuestros Clientes</a>
+                    <a href="#ultimos-articulos" class="nav-link py-2">Artículos</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="#contacto-form" class="bg-dompick-yellow hover:bg-dompick-yellowHover text-dompick-dark font-bold text-xs uppercase px-5 py-2.5 rounded-lg shadow transition duration-200 flex items-center space-x-2">
+                        <span>Contactar</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-700 hover:text-dompick-green focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Inicio</a>
+            <a href="#en-que-consiste" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">En qué consiste</a>
+            <a href="#nuestro-trabajo" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Nuestro Trabajo</a>
+            <a href="#nuestro-equipo" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Nuestro Equipo</a>
+            <a href="#nuestros-clientes" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Nuestros Clientes</a>
+            <a href="#ultimos-articulos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Artículos</a>
+            <a href="#contacto-form" class="block text-center bg-dompick-yellow text-dompick-dark font-bold text-sm py-2.5 rounded-lg">Contactar</a>
+        </div>
+    </header>
+
+    <div class="gradient-banner text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="max-w-3xl">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="badge-yellow text-xs px-3 py-1 rounded-full uppercase tracking-wider">Gestión de Alquiler Vacacional</span>
+                    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">Mallorca</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+                    ALQUILER VACACIONAL EN MALLORCA
+                </h1>
+                <p class="mt-3 text-emerald-100 text-base sm:text-lg max-w-2xl">
+                    Asesoramiento legal, fiscal y gestión integral para propietarios de casas en Mallorca. Maximice la rentabilidad de su propiedad con total seguridad.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <a href="https://wa.me/34637900413" target="_blank" rel="noopener noreferrer" class="bg-white text-dompick-greenDark hover:bg-emerald-50 font-bold px-5 py-3 rounded-xl shadow-lg transition text-center flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5 text-dompick-green" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                    </svg>
+                    <span>Escríbenos por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- MAIN CONTENT COLUMN (8 Cols) -->
+            <article class="lg:col-span-8 space-y-12 bg-white p-6 sm:p-8 rounded-2xl border border-dompick-border card-shadow">
+
+                <!-- SECTION: EN QUÉ CONSISTE -->
+                <section id="en-que-consiste" class="space-y-6">
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="text-xs font-bold text-dompick-green uppercase tracking-widest">Paso a paso</span>
+                        <h2 class="text-3xl font-black text-dompick-dark mt-1">EN QUÉ CONSISTE</h2>
+                        <p class="text-slate-600 font-semibold text-lg mt-1">Alquile su casa de manera fácil y segura</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Step 01 -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-dompick-grayBg hover:border-dompick-green transition space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-black text-dompick-yellow bg-dompick-dark px-3 py-1 rounded-lg">01</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-dompick-green">Paso 1</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-dompick-dark">ÚNASE A NOSOTROS</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Rellene este formulario con información sobre su propiedad y con las dudas que pueda tener.
+                            </p>
+                        </div>
+
+                        <!-- Step 02 -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-dompick-grayBg hover:border-dompick-green transition space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-black text-dompick-yellow bg-dompick-dark px-3 py-1 rounded-lg">02</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-dompick-green">Paso 2</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-dompick-dark">HABLAMOS CON USTED</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Contactamos con usted para confirmar todos los datos. Si es necesario, le hacemos una visita.
+                            </p>
+                        </div>
+
+                        <!-- Step 03 -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-dompick-grayBg hover:border-dompick-green transition space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-black text-dompick-yellow bg-dompick-dark px-3 py-1 rounded-lg">03</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-dompick-green">Paso 3</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-dompick-dark">BUSCAMOS HUÉSPEDES</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Buscamos huéspedes interesados en alquilar casa en vacaciones en Mallorca y gestionamos las reservas.
+                            </p>
+                        </div>
+
+                        <!-- Step 04 -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-dompick-grayBg hover:border-dompick-green transition space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-black text-dompick-yellow bg-dompick-dark px-3 py-1 rounded-lg">04</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-dompick-green">Paso 4</span>
+                            </div>
+                            <h3 class="text-lg font-extrabold text-dompick-dark">ALQUILERES VACACIONALES</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Los turistas confirman sus reservas y se alojan en su casa durante las vacaciones.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: NUESTRO TRABAJO -->
+                <section id="nuestro-trabajo" class="space-y-6 pt-6 border-t border-slate-200">
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="text-xs font-bold text-dompick-green uppercase tracking-widest">Excelencia y resultados</span>
+                        <h2 class="text-3xl font-black text-dompick-dark mt-1">NUESTRO TRABAJO</h2>
+                        <p class="italic text-slate-600 text-sm mt-1">
+                            "Nuestra principal motivación es que nuestro cliente esté satisfecho con los servicios que le ofrecemos."
+                        </p>
+                    </div>
+
+                    <div class="bg-dompick-greenLight p-6 rounded-2xl border border-dompick-green/30 space-y-4">
+                        <h3 class="text-2xl font-extrabold text-dompick-dark">
+                            Maximice la rentabilidad de sus propiedades
+                        </h3>
+                        <p class="text-slate-700 text-sm leading-relaxed">
+                            El sector del alquiler vacacional está cambiando rápidamente y existe actualmente un gran potencial para propietarios de casas en Mallorca.
+                        </p>
+                        <p class="text-slate-700 text-sm font-semibold leading-relaxed">
+                            Somos <span class="text-dompick-greenDark uppercase font-extrabold">EXPERTOS</span> en el mercado inmobiliario online y queremos transmitirle toda nuestra pasión por este sector.
+                        </p>
+                        <p class="text-slate-700 text-sm leading-relaxed">
+                            Nos encargamos de todas las fases del alquiler de su vivienda. Gracias a nuestros conocimientos legales y fiscales, el servicio que ofrecemos es completo para que los propietarios puedan estar tranquilos y seguros. Somos muy <span class="text-dompick-greenDark uppercase font-extrabold">EFICACES</span> gestionando las solicitudes de futuros huéspedes internacionales y así maximizamos el rendimiento de sus propiedades. Tenemos una visión <span class="text-dompick-greenDark uppercase font-extrabold">INTERNACIONAL</span>, nuestro equipo es multilingüe lo que facilita la comunicación con los futuros huéspedes.
+                        </p>
+                        <p class="text-slate-900 font-extrabold text-base">
+                            Y somos <span class="text-dompick-greenDark uppercase tracking-wide">MALLORQUINES</span>.
+                        </p>
+                    </div>
+
+                    <!-- 4 Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+
+                        <div class="p-5 rounded-xl border-l-4 border-dompick-green bg-slate-50 shadow-sm space-y-1">
+                            <h4 class="font-extrabold text-dompick-dark text-base tracking-wide uppercase">CONFIANZA</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Seleccionamos huéspedes cuidadosamente para asegurarnos de que respetarán su propiedad
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-xl border-l-4 border-dompick-yellow bg-slate-50 shadow-sm space-y-1">
+                            <h4 class="font-extrabold text-dompick-dark text-base tracking-wide uppercase">RENTABILIDAD</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Nos comprometemos a asesorarle personalmente para que obtenga la máxima rentabilidad posible
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-xl border-l-4 border-dompick-yellow bg-slate-50 shadow-sm space-y-1">
+                            <h4 class="font-extrabold text-dompick-dark text-base tracking-wide uppercase">TRANSPARENCIA</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Le explicamos todo de manera clara y transparente
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-xl border-l-4 border-dompick-green bg-slate-50 shadow-sm space-y-1">
+                            <h4 class="font-extrabold text-dompick-dark text-base tracking-wide uppercase">ATENCIÓN PERSONALIZADA</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Garantizamos una atención personal y excelente
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION: NUESTRO EQUIPO -->
+                <section id="nuestro-equipo" class="space-y-6 pt-6 border-t border-slate-200">
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="text-xs font-bold text-dompick-green uppercase tracking-widest">Quiénes somos</span>
+                        <h2 class="text-3xl font-black text-dompick-dark mt-1">NUESTRO EQUIPO</h2>
+                    </div>
+
+                    <div class="space-y-3 text-slate-700 text-sm leading-relaxed">
+                        <p>
+                            Contamos con un excelente equipo, formado por un equipo de gente mallorquina, joven, emprendedora, internacional y creativa con un gran interés en el mundo digital. Somos expertos en el marketing online. Gracias a nuestra perspectiva internacional y al uso de las herramientas tecnológicas conseguimos mantener una relación directa y cercana con nuestro clientes potenciales extranjeros.
+                        </p>
+                        <p class="font-semibold text-slate-900 bg-dompick-yellowLight p-3 rounded-lg border border-dompick-yellow">
+                            Nuestro objetivo es maximizar el rendimiento de su propiedad e informarle y asesorarle sobre la normativa legal y fiscal en Mallorca respecto al régimen vacacional.
+                        </p>
+                    </div>
+
+                    <!-- Team 4 Pillars -->
+                    <div class="space-y-4 pt-2">
+
+                        <!-- 01 EXPERTOS -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-dompick-green transition space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs font-black bg-dompick-green text-white px-2.5 py-1 rounded-md">01</span>
+                                <h3 class="text-lg font-black text-dompick-dark">EXPERTOS</h3>
+                            </div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Nuestro equipo se encarga de todas las fases del alquiler de su vivienda. Gracias a nuestros conocimientos digitales, legales, fiscales y lingüísticos, el servicio que ofrecemos es completo para que los propietarios y huéspedes puedan estar tranquilos y seguros.
+                            </p>
+                            <p class="text-xs font-bold text-dompick-greenDark">
+                                Tenemos conocimiento exhaustivo del sector y del marco legal.
+                            </p>
+                        </div>
+
+                        <!-- 02 EFICACES -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-dompick-green transition space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs font-black bg-dompick-green text-white px-2.5 py-1 rounded-md">02</span>
+                                <h3 class="text-lg font-black text-dompick-dark">EFICACES</h3>
+                            </div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Al ser expertos en el mundo digital, sabemos aprovechar todas las ventajas tecnológicas. De este modo, conseguimos responder en cuestión de minutos a las solicitudes de futuros huéspedes internacionales y así maximizamos el rendimiento de sus propiedades.
+                            </p>
+                            <p class="text-xs font-bold text-dompick-greenDark">
+                                Tenemos experiencia y conocimiento en tecnologías de la información, bases de datos y marketing online.
+                            </p>
+                        </div>
+
+                        <!-- 03 INTERNACIONALES -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-dompick-green transition space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs font-black bg-dompick-green text-white px-2.5 py-1 rounded-md">03</span>
+                                <h3 class="text-lg font-black text-dompick-dark">INTERNACIONALES</h3>
+                            </div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Somos un equipo con una visión internacional, somos conscientes de que el inglés no es suficiente para fidelizar a nuestros clientes. Por ello, nuestro equipo es multilingüe lo que facilita la comunicación efectiva con los futuros huéspedes.
+                            </p>
+                            <p class="text-xs font-bold text-dompick-greenDark">
+                                Con visión internacional, el mercado potencial es muy grande, lo que hace que nuestra tasa de ocupación sea mayor que la media del mercado.
+                            </p>
+                        </div>
+
+                        <!-- 04 MALLORQUINES -->
+                        <div class="p-5 rounded-xl border border-slate-200 bg-white hover:border-dompick-green transition space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xs font-black bg-dompick-green text-white px-2.5 py-1 rounded-md">04</span>
+                                <h3 class="text-lg font-black text-dompick-dark">MALLORQUINES</h3>
+                            </div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Somos gente de la isla con perspectiva internacional y estamos preparados para cualquier situación que se nos pueda plantear. Conocemos perfectamente las necesidades de los propietarios mallorquines. Por ello, nos comprometemos a ofrecerle un servicio excelente y de calidad.
+                            </p>
+                            <p class="text-xs font-bold text-dompick-greenDark">
+                                Mallorquines de varias generaciones, conocemos perfectamente las preocupaciones y necesidades de los propietarios.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION: NUESTROS CLIENTES -->
+                <section id="nuestros-clientes" class="space-y-6 pt-6 border-t border-slate-200">
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="text-xs font-bold text-dompick-green uppercase tracking-widest">Testimonios reales</span>
+                        <h2 class="text-3xl font-black text-dompick-dark mt-1">NUESTROS CLIENTES</h2>
+                        <p class="text-slate-600 font-semibold text-sm mt-1">
+                            Nuestros clientes ya confían en nosotros para alquiler vacacional en Mallorca
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                        <!-- Client 1 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md transition">
+                            <div class="space-y-2">
+                                <div class="text-dompick-yellow flex space-x-1">
+                                    ★★★★★
+                                </div>
+                                <p class="text-xs text-slate-700 italic leading-relaxed">
+                                    "Nos puso en contacto en 2017 con su padre para obtener rendimiento a su casa en el Puerto de Pollença varias semanas al año. Fue la casa mejor valorada por nuestros huéspedes el pasado verano."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-200">
+                                <h4 class="font-bold text-dompick-dark text-sm">María R.</h4>
+                                <p class="text-[11px] text-slate-500">33 años, Pollença</p>
+                            </div>
+                        </div>
+
+                        <!-- Client 2 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md transition">
+                            <div class="space-y-2">
+                                <div class="text-dompick-yellow flex space-x-1">
+                                    ★★★★★
+                                </div>
+                                <p class="text-xs text-slate-700 italic leading-relaxed">
+                                    "En 2016 nos encarga la compra y posterior gestión de alquiler vacacional de su casa. Tiene magnífico adosado en Cala Murada donde va de cuando en cuando con sus amigos y cuando no, se lo alquilamos. Como buen alemán, usó sus primeros ingresos para poner una buena barbacoa en la terraza."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-200">
+                                <h4 class="font-bold text-dompick-dark text-sm">Lorenz W.</h4>
+                                <p class="text-[11px] text-slate-500">34 años, Alemania</p>
+                            </div>
+                        </div>
+
+                        <!-- Client 3 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md transition">
+                            <div class="space-y-2">
+                                <div class="text-dompick-yellow flex space-x-1">
+                                    ★★★★★
+                                </div>
+                                <p class="text-xs text-slate-700 italic leading-relaxed">
+                                    "Gestionamos un par de casas que tiene entre Sóller y Calvià. No deja de llamarnos para decirnos lo contenta que está con nosotros. Es extraordinaria."
+                                </p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-200">
+                                <h4 class="font-bold text-dompick-dark text-sm">Catalina María F.</h4>
+                                <p class="text-[11px] text-slate-500">88 años, Sóller</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION: ÚLTIMOS ARTÍCULOS -->
+                <section id="ultimos-articulos" class="space-y-6 pt-6 border-t border-slate-200">
+                    <div class="border-b border-slate-200 pb-4">
+                        <span class="text-xs font-bold text-dompick-green uppercase tracking-widest">Blog & Noticias</span>
+                        <h2 class="text-3xl font-black text-dompick-dark mt-1">ÚLTIMOS ARTÍCULOS</h2>
+                        <p class="text-slate-600 font-semibold text-sm mt-1">
+                            Lee nuestros artículos para conocer los puntos más importantes en el alquiler vacacional Mallorca
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Article 1 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-dompick-greenLight text-dompick-greenDark font-bold px-2 py-0.5 rounded">Fiscalidad</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Impuestos del alquiler vacacional en Baleares
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Los impuestos del alquiler vacacional en Baleares pueden ser distintos dependiendo de los servicios ofrecidos
+                            </p>
+                        </div>
+
+                        <!-- Article 2 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-dompick-yellowLight text-amber-800 font-bold px-2 py-0.5 rounded">Turismo</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Ecotasa balear: el nuevo impuesto balear al turismo
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                La ecotasa es de ámbito autonómico y grava los días en que cada turista pase en cualquier alojamiento turístico insular o crucero; y será cobrado a los visitantes por quienes regenten dichos establecimientos
+                            </p>
+                        </div>
+
+                        <!-- Article 3 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-dompick-greenLight text-dompick-greenDark font-bold px-2 py-0.5 rounded">Normativa</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Ley turismo Baleares – Legalidad alquiler vacacional Mallorca
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                La situación legal del alquiler vacacional de casas y apartamentos en Mallorca sujeta a la ley de turismo en Baleares. Es un tema complejo que ha ido cambiando durante los últimos meses. Lea aquí todo sobre los contratos permitidos.
+                            </p>
+                        </div>
+
+                        <!-- Article 4 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded">Novedades</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Bienvenido a Alquiler Vacacional Mallorca
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Te damos la bienvenida a nuestra web sobre el alquiler vacacional en Mallorca. Esperamos que te guste.
+                            </p>
+                        </div>
+
+                        <!-- Article 5 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-dompick-greenLight text-dompick-greenDark font-bold px-2 py-0.5 rounded">Servicios</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Servicio de check-in. Entregamos las llaves de tu casa a los huéspedes
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Entregamos las llaves de tu casa a los huéspedes cuando aterrizan en el aeropuerto. Ahorra tiempo y gana en tranquilidad. Nosotros nos encargamos de entregar las llaves a todos tus huéspedes.
+                            </p>
+                        </div>
+
+                        <!-- Article 6 -->
+                        <div class="p-5 rounded-xl border border-slate-200 hover:border-dompick-green transition bg-white space-y-2">
+                            <span class="text-[10px] bg-dompick-yellowLight text-amber-800 font-bold px-2 py-0.5 rounded">Búsqueda</span>
+                            <h3 class="text-base font-bold text-dompick-dark hover:text-dompick-green cursor-pointer">
+                                Buscamos propiedades en Mallorca y Baleares: casas, villas y fincas
+                            </h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Buscamos propiedades en Mallorca y Baleares: casas, villas y fincas. Pueden estar cerca de la playa o en el interior.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- FINAL CTA BANNER -->
+                <section class="bg-gradient-to-br from-dompick-dark to-slate-800 text-white p-6 sm:p-8 rounded-2xl space-y-4 shadow-xl">
+                    <h3 class="text-2xl font-black text-dompick-yellow">
+                        Buscamos propietarios pensando en alquilar su casa, ¡contáctanos!
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Nuestro objetivo es asesorarle para conseguir maximizar la rentabilidad de sus propiedades mediante el alquiler vacacional. Le informamos sobre la normativa legal y fiscal en Mallorca respecto al régimen vacacional y le ayudamos a gestionar sus casas.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#contacto-form" class="inline-block bg-dompick-yellow hover:bg-dompick-yellowHover text-dompick-dark font-extrabold text-xs uppercase px-6 py-3 rounded-xl shadow-lg transition">
+                            Contactar con Dompick
+                        </a>
+                    </div>
+                </section>
+
+            </article>
+
+            <!-- RIGHT SIDEBAR COLUMN (4 Cols) -->
+            <aside class="lg:col-span-4 space-y-6">
+
+                <div class="bg-white p-6 rounded-2xl border border-dompick-border card-shadow space-y-4 sidebar-sticky">
+                    <div class="border-b border-slate-100 pb-3">
+                        <h3 class="text-lg font-extrabold text-dompick-dark uppercase tracking-tight flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-dompick-yellow inline-block"></span>
+                            <span>CONTACTO DIRECTO</span>
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1">Estamos a tu disposición en Mallorca</p>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <div class="w-9 h-9 rounded-lg bg-dompick-greenLight text-dompick-green flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase font-bold text-slate-400 block">Teléfono</span>
+                                <a href="tel:+34637900413" class="font-bold text-dompick-dark hover:text-dompick-green">+34 637 900 413</a>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="flex items-center space-x-3 p-3 rounded-xl bg-emerald-50 border border-emerald-100">
+                            <div class="w-9 h-9 rounded-lg bg-dompick-green text-white flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase font-bold text-emerald-700 block">WhatsApp</span>
+                                <a href="https://wa.me/34637900413" target="_blank" rel="noopener noreferrer" class="font-bold text-dompick-greenDark hover:underline">+34 637 900 413</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-center space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <div class="w-9 h-9 rounded-lg bg-dompick-yellowLight text-amber-700 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase font-bold text-slate-400 block">Email</span>
+                                <a href="mailto:hola@dompick.com" class="font-bold text-dompick-dark hover:text-dompick-green">hola@dompick.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div id="contacto-form" class="pt-4 border-t border-slate-100 space-y-3">
+                        <h4 class="text-sm font-bold text-dompick-dark uppercase tracking-wide">
+                            Envíanos una consulta
+                        </h4>
+                        
+                        <form id="sidebar-form" onsubmit="handleFormSubmit(event)" class="space-y-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Nombre *</label>
+                                <input type="text" required placeholder="Tu nombre" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dompick-green">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Email *</label>
+                                <input type="email" required placeholder="tuemail@ejemplo.com" class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dompick-green">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Mensaje *</label>
+                                <textarea rows="3" required placeholder="Describe información sobre tu propiedad o tus dudas..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dompick-green"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-dompick-green hover:bg-dompick-greenDark text-white font-bold text-xs uppercase py-2.5 rounded-lg shadow transition">
+                                Enviar mensaje
+                            </button>
+                        </form>
+                        <div id="form-success-msg" class="hidden text-xs bg-emerald-100 text-emerald-800 p-3 rounded-lg font-medium text-center">
+                            ¡Gracias! Hemos recibido tu mensaje y te responderemos a la brevedad.
+                        </div>
+                    </div>
+
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dompick-dark text-slate-300 pt-12 pb-8 border-t-4 border-dompick-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 rounded-lg bg-white border border-slate-700 flex items-center justify-center text-dompick-yellow shadow-md group-hover:border-dompick-yellow transition p-1.5">
+                            <!-- SVG Shape of the Island of Mallorca -->
+                            <svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100" aria-label="Isla de Mallorca">
+                                <path d="M 58,92 C 52,88 48,80 46,74 C 43,67 36,63 32,67 C 28,70 24,73 20,72 C 15,71 8,68 10,62 C 12,56 20,48 28,40 C 36,32 46,24 58,18 C 68,13 78,10 88,8 C 85,14 78,18 75,22 C 78,25 82,24 84,27 C 81,31 74,33 72,39 C 76,42 82,38 88,36 C 92,35 95,38 95,44 C 94,52 90,60 84,68 C 78,76 72,82 66,88 C 62,91 60,92 58,92 Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-light text-white tracking-tight">dompick</span>
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-dompick-yellow -mt-1">VACACIONAL</span>
+                        </div>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Inmobiliaria de referencia en Mallorca. Ofrecemos soluciones integrales para compraventa y gestión integral de alquiler vacacional.
+                    </p>
+                    <p class="text-xs text-dompick-yellow font-medium">
+                        Mallorca · Madrid
+                    </p>
+                </div>
+
+                <!-- Col 2: Contact Details -->
+                <div class="space-y-2">
+                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">Contacto</h5>
+                    <ul class="space-y-1.5 text-xs text-slate-400">
+                        <li>Calle Piamonte 23, 28004 Madrid</li>
+                        <li>Palma de Mallorca, Islas Baleares</li>
+                        <li>Tel: <a href="tel:+34637900413" class="hover:text-dompick-yellow">+34 637 900 413</a></li>
+                        <li>Email: <a href="mailto:hola@dompick.com" class="hover:text-dompick-yellow">hola@dompick.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Navigation -->
+                <div class="space-y-2">
+                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">Secciones</h5>
+                    <ul class="space-y-1.5 text-xs text-slate-400">
+                        <li><a href="#en-que-consiste" class="hover:text-white">En qué consiste</a></li>
+                        <li><a href="#nuestro-trabajo" class="hover:text-white">Nuestro Trabajo</a></li>
+                        <li><a href="#nuestro-equipo" class="hover:text-white">Nuestro Equipo</a></li>
+                        <li><a href="#nuestros-clientes" class="hover:text-white">Nuestros Clientes</a></li>
+                        <li><a href="#ultimos-articulos" class="hover:text-white">Artículos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social Media -->
+                <div class="space-y-3">
+                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">Síguenos</h5>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-dompick-green flex items-center justify-center text-white transition" title="Facebook">
+                            f
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-dompick-green flex items-center justify-center text-white transition" title="Twitter">
+                            t
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-dompick-green flex items-center justify-center text-white transition" title="Instagram">
+                            i
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-700 hover:bg-dompick-green flex items-center justify-center text-white transition" title="LinkedIn">
+                            in
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+                Copyright © 2026 Dompick Real Estate. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/34637900413" target="_blank" rel="noopener noreferrer" class="whatsapp-btn fixed bottom-6 right-6 z-50 bg-dompick-green text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center hover:bg-dompick-greenDark transition duration-300" title="Contactar por WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+    </a>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 text-white p-4 z-50 border-t-2 border-dompick-yellow shadow-2xl">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <p class="text-slate-300">
+                Utilizamos cookies para garantizar la mejor experiencia en nuestro sitio web. Si continúa utilizando este sitio asumiremos que está de acuerdo con ello.
+            </p>
+            <button onclick="acceptCookies()" class="bg-dompick-yellow hover:bg-dompick-yellowHover text-dompick-dark font-bold px-6 py-2 rounded-lg transition whitespace-nowrap">
+                Aceptar / Ok
+            </button>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('sidebar-form');
+            const successMsg = document.getElementById('form-success-msg');
+            
+            form.reset();
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            
+            setTimeout(() => {
+                form.classList.remove('hidden');
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Cookie Banner Dismissal
+        function acceptCookies() {
+            const banner = document.getElementById('cookie-banner');
+            banner.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
