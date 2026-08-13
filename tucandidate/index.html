@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tucandidate | Conseguir tu primer trabajo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        tucanRed: '#cf2e2e',
+                        tucanYellow: '#fcb900',
+                        tucanOrange: '#ff6900',
+                        tucanBlue: '#0693e3',
+                        tucanDark: '#0f172a',
+                    },
+                    boxShadow: {
+                        'glow-yellow': '0 10px 25px -5px rgba(252, 185, 0, 0.4)',
+                        'glow-blue': '0 10px 25px -5px rgba(6, 147, 227, 0.3)',
+                        'glow-orange': '0 10px 25px -5px rgba(255, 105, 0, 0.35)',
+                        'glow-red': '0 10px 25px -5px rgba(207, 46, 46, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gradient-text-brand {
+            background: linear-gradient(135deg, #cf2e2e 0%, #ff6900 50%, #fcb900 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg-brand {
+            background: linear-gradient(135deg, #0693e3 0%, #0066a3 100%);
+        }
+        .gradient-bg-accent {
+            background: linear-gradient(135deg, #ff6900 0%, #cf2e2e 100%);
+        }
+        .toucan-wing {
+            transform-origin: top left;
+            transition: transform 0.3s ease;
+        }
+        .group:hover .toucan-wing {
+            transform: rotate(-8deg);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-tucanYellow selection:text-tucanDark overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-slate-200/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <!-- Dynamic SVG Toucan Logo with brand palette -->
+                    <div class="relative w-12 h-12 flex items-center justify-center bg-tucanBlue rounded-2xl shadow-md p-1 group-hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-full h-full">
+                            <!-- Eye & Head base -->
+                            <path d="M 30 75 C 20 60, 20 30, 45 20 C 65 12, 75 30, 65 45 C 55 58, 40 75, 30 75 Z" fill="#0f172a" />
+                            <!-- Toucan Big Beak - Yellow, Orange, Red -->
+                            <path d="M 50 22 C 70 10, 95 20, 95 38 C 85 45, 60 42, 45 35 Z" fill="#fcb900" />
+                            <path d="M 68 18 C 82 15, 95 20, 95 38 C 88 42, 75 40, 65 33 Z" fill="#ff6900" />
+                            <path d="M 82 22 C 92 22, 95 28, 95 38 C 91 40, 85 37, 80 32 Z" fill="#cf2e2e" />
+                            <!-- White Throat / Collar -->
+                            <path d="M 35 40 C 45 35, 55 45, 45 60 C 38 65, 30 55, 35 40 Z" fill="#ffffff" />
+                            <!-- Eye -->
+                            <circle cx="42" cy="28" r="6" fill="#ffffff" />
+                            <circle cx="42" cy="28" r="3" fill="#0f172a" />
+                            <!-- Wing Accent -->
+                            <path class="toucan-wing" d="M 22 50 C 25 35, 40 45, 35 68 C 26 72, 18 62, 22 50 Z" fill="#cf2e2e" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black tracking-tight text-slate-900 group-hover:text-tucanRed transition-colors">
+                            TUCANDIDATE
+                        </span>
+                        <span class="text-xs font-semibold tracking-wider text-tucanBlue uppercase -mt-1">
+                            Career Finder
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-semibold text-slate-600">
+                    <a href="#servicios" class="hover:text-tucanOrange transition-colors">Servicios</a>
+                    <a href="#coaching" class="hover:text-tucanOrange transition-colors">Coaching</a>
+                    <a href="#talleres" class="hover:text-tucanOrange transition-colors">Talleres</a>
+                    <a href="#newsletter" class="hover:text-tucanOrange transition-colors">Newsletter</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <button onclick="openModal()" class="relative inline-flex items-center justify-center px-6 py-3 font-bold text-white transition-all duration-200 bg-tucanRed rounded-xl shadow-glow-red hover:bg-red-700 hover:shadow-lg active:scale-95">
+                        <span class="mr-2">ÚNETE</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 font-medium text-slate-700 hover:text-tucanOrange" onclick="toggleMobileMenu()">Servicios</a>
+            <a href="#coaching" class="block py-2 font-medium text-slate-700 hover:text-tucanOrange" onclick="toggleMobileMenu()">Coaching</a>
+            <a href="#talleres" class="block py-2 font-medium text-slate-700 hover:text-tucanOrange" onclick="toggleMobileMenu()">Talleres</a>
+            <a href="#newsletter" class="block py-2 font-medium text-slate-700 hover:text-tucanOrange" onclick="toggleMobileMenu()">Newsletter</a>
+            <button onclick="openModal(); toggleMobileMenu();" class="w-full mt-2 py-3 bg-tucanRed text-white font-bold rounded-xl shadow-glow-red">
+                ÚNETE AHORA
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-1/4 -left-20 w-72 h-72 bg-tucanYellow/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-tucanBlue/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-40 bg-tucanOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tucanYellow/20 border border-tucanYellow/40 text-slate-900 font-bold text-xs uppercase tracking-wider mb-6">
+                        <span class="w-2.5 h-2.5 rounded-full bg-tucanOrange animate-pulse"></span>
+                        Orientación Universitaria & Empleo
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15] mb-6">
+                        Todo lo que necesitas para conseguir tu <span class="gradient-text-brand">primer trabajo.</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Ayudamos a universitarios de últimos cursos en la elección de carrera profesional y en conseguir el primer trabajo.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 bg-tucanRed text-white font-extrabold text-lg rounded-2xl shadow-glow-red hover:bg-red-700 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
+                            <span>ÚNETE</span>
+                            <i class="fa-solid fa-rocket"></i>
+                        </button>
+                        
+                        <a href="#talleres" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-800 font-bold text-lg rounded-2xl border-2 border-slate-200 hover:border-tucanBlue hover:text-tucanBlue hover:bg-slate-50 transition-all text-center">
+                            Ver Próximos Talleres
+                        </a>
+                    </div>
+
+                    <!-- Quick highlights pills -->
+                    <div class="mt-12 pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-tucanBlue">100%</p>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-500">Práctico y Guiado</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-tucanOrange">3 Días</p>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-500">Intensivos</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-tucanRed">Plazas</p>
+                            <p class="text-xs sm:text-sm font-semibold text-slate-500">Limitadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Column -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-tucanYellow via-tucanOrange to-tucanBlue opacity-70 blur-xl"></div>
+                        
+                        <!-- Content Box -->
+                        <div class="relative bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-tucanBlue/10 flex items-center justify-center text-tucanBlue">
+                                        <i class="fa-solid fa-compass text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-slate-900 text-sm">Tu Ruta Profesional</h3>
+                                        <p class="text-xs text-slate-500">De la universidad a la empresa</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
+                                    En Vivo
+                                </span>
+                            </div>
+
+                            <!-- Interactive Progress Preview Box -->
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 space-y-4">
+                                <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+                                    <span>Elección de carrera</span>
+                                    <span class="text-tucanOrange">Paso 1</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-tucanOrange h-full w-full"></div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+                                    <span>Optimizador de CV & Perfil</span>
+                                    <span class="text-tucanBlue">Paso 2</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-tucanBlue h-full w-4/5"></div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+                                    <span>Simulacro de Entrevista</span>
+                                    <span class="text-tucanRed">Paso 3</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-tucanRed h-full w-2/3"></div>
+                                </div>
+                            </div>
+
+                            <!-- Motivational Callout inside card -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-tucanYellow/20 to-tucanOrange/20 border border-tucanYellow/40 flex items-center gap-3">
+                                <i class="fa-solid fa-lightbulb text-tucanOrange text-2xl"></i>
+                                <p class="text-xs font-bold text-slate-800 leading-snug">
+                                    "Descubre tu talento único y destácate entre cientos de candidatos."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Banner Section -->
+    <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
+                    Te guiamos y empoderamos para que descubras y lances tu carrera profesional
+                </h2>
+                <div class="w-20 h-1.5 bg-tucanYellow mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- 3 Pillars Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Pillar 1 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700 hover:border-tucanYellow transition-all group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-tucanYellow/20 text-tucanYellow flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-map-signs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Descubre tus Opciones</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Enseñándote las carreras profesionales que puedes elegir
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700 hover:border-tucanOrange transition-all group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-tucanOrange/20 text-tucanOrange flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Herramientas Clave</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Dándote las herramientas necesarias para decidir tu futuro y conseguir tu objetivo
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700 hover:border-tucanBlue transition-all group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-tucanBlue/20 text-tucanBlue flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Conexión Empresarial</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Acercándote a las empresas
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-tucanRed font-black text-xs uppercase tracking-widest bg-tucanRed/10 px-4 py-1.5 rounded-full">
+                    Nuestros Servicios
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-4 mb-4">
+                    Ofrecemos orientación y herramientas para impulsar tu carrera profesional
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                    Los servicios consisten en talleres en grupo y sesiones personalizadas orientadas a entrenar al estudiante o recién graduado a afrontar con éxito la búsqueda de trabajo.
+                </p>
+            </div>
+
+            <!-- 6 Services Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: CV profesional -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanRed/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanRed/10 text-tucanRed flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-tucanRed transition-colors">
+                        CV profesional
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        En nuestros talleres de CV aprenderás a preparar un curriculum profesional enfocado en el sector al que va dirigido.
+                    </p>
+                </div>
+
+                <!-- Service 2: Cartas de presentación -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanOrange/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanOrange/10 text-tucanOrange flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-tucanOrange transition-colors">
+                        Cartas de presentación
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Clases maestras para redacción de tu carta de presentación dirigida a tu empresa objetivo.
+                    </p>
+                </div>
+
+                <!-- Service 3: Presentación de empresas -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanBlue/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanBlue/10 text-tucanBlue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building-user"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-tucanBlue transition-colors">
+                        Presentación de empresas
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Presentación de empresas nacionales e internacionales y recomendaciones sobre dónde, cómo y cuándo presentar la candidatura.
+                    </p>
+                </div>
+
+                <!-- Service 4: CV online -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanYellow/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanYellow/20 text-yellow-700 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">
+                        CV online
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Clase maestra de impacto online del candidato: presentación de aplicaciones e indicaciones de CV online.
+                    </p>
+                </div>
+
+                <!-- Service 5: Entrevistas individuales -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanRed/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanRed/10 text-tucanRed flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-tucanRed transition-colors">
+                        Entrevistas individuales
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Entrenamiento para entrevistas individuales con trucos de preparación y entrevistas de prueba.
+                    </p>
+                </div>
+
+                <!-- Service 6: Temas específicos -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-tucanBlue/30 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanBlue/10 text-tucanBlue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-tucanBlue transition-colors">
+                        Temas específicos
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Talleres sobre temas específicos como negociación de salario y condiciones de entrada.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Coaching Highlight Section -->
+    <section id="coaching" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-tucanDark text-white relative overflow-hidden">
+        <!-- Accent circles -->
+        <div class="absolute -right-20 top-0 w-80 h-80 bg-tucanOrange/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 bottom-0 w-80 h-80 bg-tucanBlue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-tucanYellow to-tucanRed rounded-3xl blur opacity-30"></div>
+                        <div class="relative bg-slate-800/90 border border-slate-700 p-8 rounded-3xl">
+                            <div class="w-16 h-16 rounded-2xl bg-tucanYellow flex items-center justify-center text-tucanDark text-3xl font-black mb-6 shadow-glow-yellow">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">
+                                Tu talento, tus valores, tu carrera ideal.
+                            </h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                Descubre tus fortalezas y proyecta una imagen profesional auténtica y convincente ante reclutadores.
+                            </p>
+                            <div class="flex items-center gap-3 text-tucanYellow text-sm font-bold">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Acompañamiento 1 a 1 personalizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <span class="text-tucanYellow font-black text-xs uppercase tracking-widest bg-tucanYellow/10 px-4 py-1.5 rounded-full border border-tucanYellow/30">
+                        Programa Exclusivo
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black mt-4 mb-6 leading-tight">
+                        Coaching profesional individual
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+                        Esta formación y entrenamiento van acompañados por un proceso de coaching profesional individual, que tiene como objetivo ayudar al estudiante a descubrir su talento y sus valores y motivaciones para luego poder enfocarlo hacia una carrera profesional donde se sienta realizado y motivado.
+                    </p>
+                    <button onclick="openModal()" class="px-8 py-4 bg-tucanYellow text-tucanDark font-extrabold text-base rounded-2xl shadow-glow-yellow hover:bg-yellow-400 hover:scale-105 transition-all">
+                        Solicitar Sesión Individual
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Workshop Agenda Section -->
+    <section id="talleres" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-tucanBlue font-black text-xs uppercase tracking-widest bg-tucanBlue/10 px-4 py-1.5 rounded-full">
+                    Estructura del Programa
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-4 mb-4">
+                    Participa en nuestros talleres
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Y consigue toda la información y las herramientas que necesitas para encontrar tu mejor primer trabajo
+                </p>
+            </div>
+
+            <!-- Day Tabs Control -->
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex p-1.5 bg-slate-100 rounded-2xl gap-2 border border-slate-200">
+                    <button onclick="switchDay(1)" id="tab-day-1" class="px-6 py-3 rounded-xl font-bold text-sm transition-all bg-tucanRed text-white shadow-sm">
+                        Día 1: Primeros pasos
+                    </button>
+                    <button onclick="switchDay(2)" id="tab-day-2" class="px-6 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">
+                        Día 2: Aprende
+                    </button>
+                    <button onclick="switchDay(3)" id="tab-day-3" class="px-6 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900">
+                        Día 3: Practica
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="day-content-container" class="max-w-4xl mx-auto">
+                
+                <!-- Day 1 Panel -->
+                <div id="day-1-panel" class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm transition-all">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-tucanRed text-white font-black text-2xl flex items-center justify-center">
+                            01
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900">Día 1 — Primeros Pasos</h3>
+                            <p class="text-slate-500 text-sm font-semibold">Definiendo tu rumbo y explorando el mercado</p>
+                        </div>
+                    </div>
+                    <ul class="grid sm:grid-cols-2 gap-4">
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanRed text-lg"></i>
+                            Carreras profesionales
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanRed text-lg"></i>
+                            Universo de empresas
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanRed text-lg"></i>
+                            Elegir mi carrera
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanRed text-lg"></i>
+                            Elegir mi empresa
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 Panel (Hidden initially) -->
+                <div id="day-2-panel" class="hidden bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm transition-all">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-tucanOrange text-white font-black text-2xl flex items-center justify-center">
+                            02
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900">Día 2 — Aprende</h3>
+                            <p class="text-slate-500 text-sm font-semibold">Herramientas tácticas y presencia digital</p>
+                        </div>
+                    </div>
+                    <ul class="grid sm:grid-cols-2 gap-4">
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanOrange text-lg"></i>
+                            Masterclass de CV
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanOrange text-lg"></i>
+                            Cómo hacer cartas de motivación
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanOrange text-lg"></i>
+                            Perfil online de candidato
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanOrange text-lg"></i>
+                            Envío de solicitudes
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3 Panel (Hidden initially) -->
+                <div id="day-3-panel" class="hidden bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm transition-all">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-tucanBlue text-white font-black text-2xl flex items-center justify-center">
+                            03
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900">Día 3 — Practica</h3>
+                            <p class="text-slate-500 text-sm font-semibold">Simulación real y feedback personalizado</p>
+                        </div>
+                    </div>
+                    <ul class="grid sm:grid-cols-2 gap-4">
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanBlue text-lg"></i>
+                            ¿Cómo es una entrevista de trabajo?
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanBlue text-lg"></i>
+                            Qué hacer y qué no hacer
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanBlue text-lg"></i>
+                            Simulacros de entrevistas
+                        </li>
+                        <li class="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-200 text-slate-800 font-bold">
+                            <i class="fa-solid fa-circle-check text-tucanBlue text-lg"></i>
+                            Feedback & Takeaways
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Limited Spots Banner Callout -->
+            <div class="mt-12 bg-gradient-to-r from-tucanYellow/20 via-tucanOrange/20 to-tucanRed/20 border-2 border-tucanOrange/40 p-8 rounded-3xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-2xl bg-tucanRed text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-extrabold text-slate-900">El primer taller tiene plazas limitadas</h4>
+                        <p class="text-slate-700 text-sm font-medium">Apúntate ahora y te entrenaremos para las primeras rondas</p>
+                    </div>
+                </div>
+                <button onclick="openModal()" class="px-6 py-3.5 bg-tucanRed text-white font-extrabold rounded-xl shadow-glow-red hover:bg-red-700 transition-all shrink-0">
+                    Asegurar mi plaza
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-20 bg-tucanBlue relative text-white overflow-hidden">
+        <div class="absolute -left-10 top-0 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="absolute -right-10 bottom-0 w-64 h-64 bg-tucanYellow/20 rounded-full blur-2xl"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-3xl mx-auto mb-6">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-black mb-4">
+                ¡Subscríbete a nuestra newsletter!
+            </h2>
+            
+            <p class="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                Subscríbete y recibirás nuestra newsletter con ofertas de trabajo, consejos e información de los próximos cursos para que encuentres la carrera que te mereces.
+            </p>
+
+            <!-- Newsletter Form -->
+            <form id="newsletter-form" onsubmit="handleNewsletter(event)" class="max-w-xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-3 bg-white/10 p-2 rounded-2xl backdrop-blur-md border border-white/20">
+                    <div class="relative flex-1">
+                        <input type="email" id="newsletter-email" required placeholder="Tu correo electrónico *" class="w-full px-5 py-4 rounded-xl text-slate-900 bg-white placeholder-slate-400 font-medium focus:outline-none focus:ring-2 focus:ring-tucanYellow">
+                    </div>
+                    <button type="submit" class="px-8 py-4 bg-tucanYellow text-tucanDark font-black rounded-xl hover:bg-yellow-300 transition-all shadow-lg active:scale-95 text-center whitespace-nowrap">
+                        SÍ, QUIERO IR A POR TODAS
+                    </button>
+                </div>
+            </form>
+
+            <!-- Feedback Message Container -->
+            <div id="newsletter-feedback" class="hidden mt-6 p-4 rounded-2xl bg-white text-slate-900 font-bold max-w-xl mx-auto border-2 border-tucanYellow animate-bounce">
+                <i class="fa-solid fa-circle-check text-green-500 mr-2 text-lg"></i>
+                <span>¡Gracias por suscribirte! Te hemos enviado un correo de bienvenida.</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-tucanDark text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-tucanBlue rounded-xl p-1 flex items-center justify-center">
+                            <svg viewBox="0 0 100 100" class="w-full h-full">
+                                <path d="M 30 75 C 20 60, 20 30, 45 20 C 65 12, 75 30, 65 45 C 55 58, 40 75, 30 75 Z" fill="#ffffff" />
+                                <path d="M 50 22 C 70 10, 95 20, 95 38 C 85 45, 60 42, 45 35 Z" fill="#fcb900" />
+                                <path d="M 68 18 C 82 15, 95 20, 95 38 C 88 42, 75 40, 65 33 Z" fill="#ff6900" />
+                                <circle cx="42" cy="28" r="5" fill="#0f172a" />
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-black text-white tracking-wider">TUCANDIDATE</span>
+                    </div>
+                    <p class="text-slate-400 text-sm font-semibold uppercase tracking-wider mb-2">
+                        Career finder and guidance
+                    </p>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Acompañamos a la nueva generación de profesionales en el inicio de su carrera laboral.
+                    </p>
+                </div>
+
+                <!-- Col 2: Mission -->
+                <div>
+                    <h4 class="text-tucanYellow font-black text-sm uppercase tracking-widest mb-4">
+                        EMPODÉRATE
+                    </h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Empoderamos a universitarios de últimos cursos en la elección de carrera profesional y en conseguir su primer trabajo.
+                    </p>
+                </div>
+
+                <!-- Col 3: Social & Connect -->
+                <div>
+                    <h4 class="text-tucanOrange font-black text-sm uppercase tracking-widest mb-4">
+                        SÍGUENOS
+                    </h4>
+                    <div class="flex flex-col space-y-3 font-semibold text-slate-300">
+                        <a href="https://facebook.com" target="_blank" class="flex items-center gap-3 hover:text-tucanBlue transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </div>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 hover:text-tucanBlue transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300">
+                                <i class="fa-brands fa-linkedin-in text-sm"></i>
+                            </div>
+                            <span>Linkedin</span>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 hover:text-tucanRed transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </div>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-medium">
+                <p>&copy; 2026 Tucandidate. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Diseñado para impulsar tu futuro laboral.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Registration Dialog -->
+    <div id="join-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative border border-slate-100 overflow-hidden transform transition-all scale-100">
+            
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center focus:outline-none">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-tucanRed/10 text-tucanRed rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900">Únete a Tucandidate</h3>
+                <p class="text-slate-500 text-sm mt-1">Reserva tu plaza para el próximo taller de carrera profesional</p>
+            </div>
+
+            <form id="modal-form" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo *</label>
+                    <input type="text" required placeholder="Tu nombre y apellidos" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-tucanRed">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Universitario / Personal *</label>
+                    <input type="email" required placeholder="ejemplo@universidad.edu" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-tucanRed">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Carrera / Grado Actual</label>
+                    <input type="text" placeholder="Ej: ADE, Ingeniería, Derecho..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-tucanRed">
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-tucanRed text-white font-extrabold rounded-xl shadow-glow-red hover:bg-red-700 transition-all text-base mt-2">
+                    CONFIRMAR MI INSCRIPCIÓN
+                </button>
+            </form>
+
+            <div id="modal-success" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-xl font-extrabold text-slate-900 mb-2">¡Inscripción Recibida!</h4>
+                <p class="text-slate-600 text-sm mb-6">Nos pondremos en contacto contigo en breve para darte la bienvenida y confirmar los detalles del taller.</p>
+                <button onclick="closeModal()" class="px-6 py-2.5 bg-slate-900 text-white font-bold rounded-xl">
+                    Cerrar
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Day switch logic in Workshop Agenda
+        function switchDay(dayNum) {
+            // Panels
+            const day1 = document.getElementById('day-1-panel');
+            const day2 = document.getElementById('day-2-panel');
+            const day3 = document.getElementById('day-3-panel');
+
+            // Tabs
+            const tab1 = document.getElementById('tab-day-1');
+            const tab2 = document.getElementById('tab-day-2');
+            const tab3 = document.getElementById('tab-day-3');
+
+            // Reset panels
+            day1.classList.add('hidden');
+            day2.classList.add('hidden');
+            day3.classList.add('hidden');
+
+            // Reset tab styles
+            [tab1, tab2, tab3].forEach(tab => {
+                tab.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-slate-900";
+            });
+
+            // Activate chosen
+            if (dayNum === 1) {
+                day1.classList.remove('hidden');
+                tab1.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all bg-tucanRed text-white shadow-sm";
+            } else if (dayNum === 2) {
+                day2.classList.remove('hidden');
+                tab2.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all bg-tucanOrange text-white shadow-sm";
+            } else if (dayNum === 3) {
+                day3.classList.remove('hidden');
+                tab3.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all bg-tucanBlue text-white shadow-sm";
+            }
+        }
+
+        // Modal Open / Close logic
+        function openModal() {
+            const modal = document.getElementById('join-modal');
+            modal.classList.remove('hidden');
+            // reset form view
+            document.getElementById('modal-form').classList.remove('hidden');
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('join-modal');
+            modal.classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            document.getElementById('modal-form').classList.add('hidden');
+            document.getElementById('modal-success').classList.remove('hidden');
+        }
+
+        // Newsletter submission logic
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const form = document.getElementById('newsletter-form');
+            const feedback = document.getElementById('newsletter-feedback');
+            
+            form.classList.add('hidden');
+            feedback.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
